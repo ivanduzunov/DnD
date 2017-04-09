@@ -1,0 +1,5 @@
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Models\bin\Debug\DnD.Models.dll
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Models\bin\Debug\DnD.Models.pdb
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Models\obj\Debug\DnD.Models.csprojResolveAssemblyReference.cache
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Models\obj\Debug\DnD.Models.dll
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Models\obj\Debug\DnD.Models.pdb

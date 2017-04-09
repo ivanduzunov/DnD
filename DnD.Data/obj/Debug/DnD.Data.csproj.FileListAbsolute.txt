@@ -1,0 +1,12 @@
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\bin\Debug\DnD.Data.dll.config
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\bin\Debug\DnD.Data.dll
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\bin\Debug\DnD.Data.pdb
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\bin\Debug\DnD.Models.dll
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\bin\Debug\EntityFramework.dll
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\bin\Debug\DnD.Models.pdb
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\bin\Debug\EntityFramework.xml
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\obj\Debug\DnD.Data.csprojResolveAssemblyReference.cache
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\obj\Debug\DnD.Data.dll
+c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\obj\Debug\DnD.Data.pdb
