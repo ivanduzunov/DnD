@@ -54,11 +54,11 @@ namespace DnD.Data
                 PhaseTyper("Ready!");
             }
 
-            PhaseTyper("Choose your hero!");
-            foreach (Hero hero in cnxt.Heroes)
-            {
-                PhaseTyper($"NAME: {hero.Name}, Description: {hero.Description}");
-            }
+            //PhaseTyper("Choose your hero!");
+            //foreach (Hero hero in cnxt.Heroes)
+            //{
+            //    PhaseTyper($"NAME: {hero.Name}, Description: {hero.Description}");
+            //}
         }
         public static void PhaseTyper(string text)
         {
@@ -69,6 +69,83 @@ namespace DnD.Data
                 Thread.Sleep(50);
             }
             Console.WriteLine();
+        }
+
+        public static void ChooseHero(DnDContext context)
+        {
+            Console.WindowHeight = 17;
+            Console.BufferHeight = 17;
+            Console.WindowWidth = 50;
+            Console.BufferWidth = 50;
+            Console.Clear();
+            PhaseTyper("Choose your hero!");
+            foreach (Hero hero in context.Heroes)
+            {
+                PhaseTyper($"NAME: {hero.Name}, Description: {hero.Description}");
+            }
+
+            var heroes = context.Heroes.ToList();
+            int pageSize = heroes.Count();
+            int pointer =1;
+            
+            while (true)
+            {
+                
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+
+                Console.Clear();
+                Console.WriteLine("Choose your hero!");
+                int current = 1;
+                foreach (var hero in context.Heroes)
+                {
+                    
+
+                    if (current == pointer)
+                    {
+                        Console.BackgroundColor = ConsoleColor.White;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                    }
+                    else
+                    {
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+                 
+                    Console.WriteLine($"NAME: {hero.Name}, Description: {hero.Description}");
+                    
+                    current++;
+                }
+                               
+                var key = Console.ReadKey();
+                switch (key.Key.ToString())
+                {
+                    case "Enter":
+                        Console.Clear();
+                        var currentHero = heroes.Skip(pointer - 1).First();
+                        Console.WriteLine($"Hero {currentHero.Name} chosen" );
+                       
+                        return;
+                       
+
+                    case "UpArrow":
+                        if (pointer > 1)
+                        {
+                            pointer--;
+                        }
+                        
+                        break;
+                    case "DownArrow":
+                        if (pointer < pageSize)
+                        {
+                            pointer++;
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+            }
         }
     }
 }

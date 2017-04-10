@@ -10,3 +10,27 @@ c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\bin\Debug\Ent
 c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\obj\Debug\DnD.Data.csprojResolveAssemblyReference.cache
 c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\obj\Debug\DnD.Data.dll
 c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\obj\Debug\DnD.Data.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Data\bin\Debug\DnD.Data.dll.config
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Data\bin\Debug\DnD.Data.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Data\bin\Debug\DnD.Data.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Data\bin\Debug\DnD.Models.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Data\bin\Debug\EntityFramework.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Data\bin\Debug\DnD.Models.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Data\bin\Debug\EntityFramework.xml
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Data\obj\Debug\DnD.Data.csprojResolveAssemblyReference.cache
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Data\obj\Debug\DnD.Data.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Data\obj\Debug\DnD.Data.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Data\bin\Debug\DnD.Data.dll.config
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Data\bin\Debug\DnD.Data.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Data\bin\Debug\DnD.Data.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Data\bin\Debug\DnD.Models.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Data\bin\Debug\EntityFramework.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Data\bin\Debug\DnD.Models.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Data\bin\Debug\EntityFramework.xml
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Data\obj\Debug\DnD.Data.csprojResolveAssemblyReference.cache
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Data\obj\Debug\DnD.Data.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Data\obj\Debug\DnD.Data.pdb
