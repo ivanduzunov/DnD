@@ -9,6 +9,7 @@ using System.ComponentModel;
 
 
 
+
 namespace DnD.Client
 {
     public class Program
@@ -23,6 +24,12 @@ namespace DnD.Client
 
             DnDContext context = new DnDContext();
             Utility.ChooseHero(context);
+            //Prosto e izvaden Hero v sledvashtiq method sled kraq na igrata shte tryabva da se dropne, za da ne se dublirat
+            Utility.Next();
+           
+           
+           
+
         }
 
        

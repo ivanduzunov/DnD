@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+
 namespace DnD.Data
 {
     public static class Utility
@@ -70,7 +71,6 @@ namespace DnD.Data
             }
             Console.WriteLine();
         }
-
         public static void ChooseHero(DnDContext context)
         {
             Console.WindowHeight = 17;
@@ -86,11 +86,11 @@ namespace DnD.Data
 
             var heroes = context.Heroes.ToList();
             int pageSize = heroes.Count();
-            int pointer =1;
-            
+            int pointer = 1;
+
             while (true)
             {
-                
+
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
 
@@ -99,7 +99,7 @@ namespace DnD.Data
                 int current = 1;
                 foreach (var hero in context.Heroes)
                 {
-                    
+
 
                     if (current == pointer)
                     {
@@ -111,29 +111,29 @@ namespace DnD.Data
                         Console.BackgroundColor = ConsoleColor.Black;
                         Console.ForegroundColor = ConsoleColor.White;
                     }
-                 
+
                     Console.WriteLine($"NAME: {hero.Name}, Description: {hero.Description}");
-                    
+
                     current++;
                 }
-                               
+
                 var key = Console.ReadKey();
+                Hero currentHero;
                 switch (key.Key.ToString())
                 {
                     case "Enter":
-                        Console.Clear();
-                        var currentHero = heroes.Skip(pointer - 1).First();
-                        Console.WriteLine($"Hero {currentHero.Name} chosen" );
-                       
-                        return;
-                       
 
+                        currentHero = heroes.Skip(pointer - 1).First();
+                        Introduction(currentHero);
+                        context.Heroes.Add(currentHero);
+                        context.SaveChanges();
+                        return;
                     case "UpArrow":
                         if (pointer > 1)
                         {
                             pointer--;
                         }
-                        
+
                         break;
                     case "DownArrow":
                         if (pointer < pageSize)
@@ -147,5 +147,40 @@ namespace DnD.Data
                 }
             }
         }
+        public static void Introduction(Hero ChosenHero)
+        {
+            Console.Clear();
+            PhaseTyper($"You choose {ChosenHero.Name.ToUpper()}!"); Console.WriteLine();
+            PhaseTyper($"Description: {ChosenHero.Description}");
+            PhaseTyper($"Attack Power: {ChosenHero.AttackPower}");
+            PhaseTyper($"Defence Power: {ChosenHero.DeffencePower}");
+            PhaseTyper($"Primary Health: {ChosenHero.Health}"); Console.WriteLine();
+            PhaseTyper($"Kill dragons to get Special Abilities!"); Console.WriteLine();
+
+            Console.WriteLine("Press any key to continue.");
+            Console.ReadLine();
+            Console.Clear();
+
+
+        }
+        public static void Next()
+        {
+            var context = new DnDContext();
+            List<Hero> heroesList = context.Heroes.ToList();
+            Hero hero = null;
+            for (int i = 0; i < heroesList.Count; i++)
+            {
+                if (i == heroesList.Count() -1)
+                {
+                    hero = heroesList[i];
+                }
+            }
+            Console.WriteLine(hero.Name);
+                
+
+            
+           
+        }
+
     }
 }

@@ -34,3 +34,15 @@ C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Client\bin\Debug\DnD.Data.
 C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Client\bin\Debug\DnD.Models.pdb
 C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Client\bin\Debug\EntityFramework.xml
 C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Client\obj\Debug\DnD.Client.csprojResolveAssemblyReference.cache
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\DnD.Client.exe.config
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\obj\Debug\DnD.Client.exe
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\obj\Debug\DnD.Client.pdb
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\DnD.Client.exe
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\DnD.Client.pdb
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\DnD.Data.dll
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\DnD.Models.dll
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\EntityFramework.dll
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\DnD.Data.pdb
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\DnD.Models.pdb
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\EntityFramework.xml
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\obj\Debug\DnD.Client.csprojResolveAssemblyReference.cache
