@@ -18,12 +18,12 @@ namespace DnD.Data
         public virtual DbSet<Hero> Heroes { get; set; }
         public virtual DbSet<SpecialAbility> SpecialAbilities { get; set; }
         public virtual DbSet<Dragon>  Dragons{ get; set; }
-
+        public virtual DbSet<Room> Rooms { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            
 
-           
             modelBuilder.Entity<SpecialAbility>().Property(sa => sa.Description).IsOptional();            
         }
 

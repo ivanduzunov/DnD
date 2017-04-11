@@ -16,13 +16,14 @@ namespace DnD.Client
         public static void Main(string[] args)
         {
             Utility.StartGame();
-            Console.WindowHeight = 17;
-            Console.BufferHeight = 17;
-            Console.WindowWidth = 50;
-            Console.BufferWidth = 50;
+            Console.WindowHeight = 30;
+            Console.BufferHeight = 30;
+            Console.WindowWidth = 60;
+            Console.BufferWidth = 60;
 
             DnDContext context = new DnDContext();
             Utility.ChooseHero(context);
+            Utility.Next();
         }
 
        

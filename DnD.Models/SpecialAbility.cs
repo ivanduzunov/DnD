@@ -15,10 +15,10 @@ namespace DnD.Models
         
         [Key]
         public int Id { get; set; }
-        [MaxLength(15)]
+        [MaxLength(25)]
         [Required]
         public string Name { get; set; }
-        [MaxLength(30)]
+        [MaxLength(255)]
         public string Description { get; set; }
         [Required]
         public SpecialAbilityType AblityType { get; set; }
