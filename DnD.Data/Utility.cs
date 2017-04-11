@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+
 namespace DnD.Data
 {
     public static class Utility
@@ -88,7 +89,6 @@ namespace DnD.Data
             }
             Console.WriteLine();
         }
-
         public static void ChooseHero(DnDContext context)
         {
             Console.WindowHeight = 30;
@@ -104,10 +104,18 @@ namespace DnD.Data
 
             var heroes = context.Heroes.ToList();
             int pageSize = heroes.Count();
+<<<<<<< HEAD
             int pointer =1;
             
             while ( true  )
             {
+=======
+            int pointer = 1;
+
+            while (true)
+            {
+
+>>>>>>> 1dead78b628ae463a9ed257148ee62294e93c8a8
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
 
@@ -117,7 +125,7 @@ namespace DnD.Data
                 int current = 1;
                 foreach (var hero in context.Heroes)
                 {
-                    
+
 
                     if (current == pointer)
                     {
@@ -129,15 +137,17 @@ namespace DnD.Data
                         Console.BackgroundColor = ConsoleColor.Black;
                         Console.ForegroundColor = ConsoleColor.White;
                     }
-                 
+
                     Console.WriteLine($"NAME: {hero.Name}, Description: {hero.Description}");
-                    
+
                     current++;
                 }
-                               
+
                 var key = Console.ReadKey();
+                Hero currentHero;
                 switch (key.Key.ToString())
                 {
+<<<<<<< HEAD
                     case "Enter":
                         
                         var currentHero = heroes.Skip(pointer - 1).First();
@@ -145,24 +155,39 @@ namespace DnD.Data
                         context.Heroes.Add(currentHero);
                         context.SaveChanges();
                         return;
+=======
+                    case "Enter":
+
+                        currentHero = heroes.Skip(pointer - 1).First();
+                        Introduction(currentHero);
+                        context.Heroes.Add(currentHero);
+                        context.SaveChanges();
+                        return;
+>>>>>>> 1dead78b628ae463a9ed257148ee62294e93c8a8
                     case "UpArrow":
                         if (pointer > 1)
                         {
                             pointer--;
                         }
-                        
+
                         break;
                     case "DownArrow":
                         if (pointer < pageSize)
                         {
                             pointer++;
                         }
+<<<<<<< HEAD
                         break;
+=======
+                        break;
+
+>>>>>>> 1dead78b628ae463a9ed257148ee62294e93c8a8
                     default:
                         break;
                 }
             }
         }
+<<<<<<< HEAD
 
         public static void Introduction(Hero ChosenHero)
         {
@@ -205,5 +230,42 @@ namespace DnD.Data
     
 
         }
+=======
+        public static void Introduction(Hero ChosenHero)
+        {
+            Console.Clear();
+            PhaseTyper($"You choose {ChosenHero.Name.ToUpper()}!"); Console.WriteLine();
+            PhaseTyper($"Description: {ChosenHero.Description}");
+            PhaseTyper($"Attack Power: {ChosenHero.AttackPower}");
+            PhaseTyper($"Defence Power: {ChosenHero.DeffencePower}");
+            PhaseTyper($"Primary Health: {ChosenHero.Health}"); Console.WriteLine();
+            PhaseTyper($"Kill dragons to get Special Abilities!"); Console.WriteLine();
+
+            Console.WriteLine("Press any key to continue.");
+            Console.ReadLine();
+            Console.Clear();
+
+
+        }
+        public static void Next()
+        {
+            var context = new DnDContext();
+            List<Hero> heroesList = context.Heroes.ToList();
+            Hero hero = null;
+            for (int i = 0; i < heroesList.Count; i++)
+            {
+                if (i == heroesList.Count() -1)
+                {
+                    hero = heroesList[i];
+                }
+            }
+            Console.WriteLine(hero.Name);
+                
+
+            
+           
+        }
+
+>>>>>>> 1dead78b628ae463a9ed257148ee62294e93c8a8
     }
 }
