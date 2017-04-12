@@ -27,7 +27,8 @@ namespace DnD.Models
         [Required]
         public int DeffencePower { get; set; }
         public int Health { get; set; }
-        public int Level { get; set; }
+        public int RoomId { get; set; }
+        public virtual Room Room { get; set; }
         public virtual ICollection<Hero> Killers { get; set; }
 
     }
