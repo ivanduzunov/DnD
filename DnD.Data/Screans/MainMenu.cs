@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace DnD.Data.Screans
 {
-   public class MainMenu
+    public class MainMenu
     {
         public static void Show()
         {
-            //proba
+
             Console.Clear();
             Console.WindowHeight = 30;
             Console.BufferHeight = 30;
@@ -21,7 +22,7 @@ namespace DnD.Data.Screans
             string secondLine = "How to play";
             string thirdLine = "SpecialAbilities";
             string fourthLine = "Exit";
-            lines.Add(firstLine);lines.Add(secondLine);lines.Add(thirdLine);lines.Add(fourthLine);
+            lines.Add(firstLine); lines.Add(secondLine); lines.Add(thirdLine); lines.Add(fourthLine);
             int pointer = 1;
             int pageSize = 4;
             while (true)
@@ -32,7 +33,7 @@ namespace DnD.Data.Screans
                 Console.WriteLine("Welcome to the main menu of the game");
                 Console.WriteLine();
                 int current = 1;
-               foreach(var line in lines) 
+                foreach (var line in lines)
                 {
                     {
                         if (current == pointer)
@@ -56,12 +57,32 @@ namespace DnD.Data.Screans
                 switch (key.Key.ToString())
                 {
                     case "Enter":
-                        if (pointer==1)
+                        if (pointer == 1)
                         {
                             Utility.Next();
                             return;
                         }
-                        
+                        else if (pointer == 2)
+                        {
+                            HowToPlayMenu();
+                            return;
+                        }
+                        else if (pointer == 3)
+                        {
+                            SpecialAbilitiesMenu();
+                            return;
+                        }
+                        else if (pointer == 4)
+                        {       
+                            Console.BackgroundColor = ConsoleColor.Black;
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Clear();                           
+                            Console.WriteLine("Thank you for playing Dragons and Dungeons! Press any key to Exit the Game");
+                            Console.ReadKey();
+                            Console.Clear();
+                            Environment.Exit(0);
+                        }
+
                         return;
 
                     case "UpArrow":
@@ -81,6 +102,50 @@ namespace DnD.Data.Screans
                     default:
                         break;
                 }
+            }
+        }
+        public static void SpecialAbilitiesMenu()
+        {
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Clear();
+            Utility.PhaseTyper("After each killed Dragon, You can choose one between these Special Abilities:"); Console.WriteLine();
+
+            var context = new DnDContext();
+
+            foreach (var item in context.SpecialAbilities)
+            {
+                Utility.PhaseTyper($"Name: {item.Name}. This Ability would give you {item.Power} {item.AblityType}");
+            }
+            Console.WriteLine();
+
+
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("Back to Main Menu");
+            var key = Console.ReadKey();
+            switch (key.Key.ToString())
+            {
+                case "Enter":
+                    Show(); break;                 
+            }
+           
+        }
+        public static void HowToPlayMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("How to play"); Console.WriteLine();
+            Utility.PhaseTyper("Something Here...");
+            Console.WriteLine();
+
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("Back to Main Menu");
+            var key = Console.ReadKey();
+            switch (key.Key.ToString())
+            {
+                case "Enter":
+                    Show(); break;
             }
         }
     }
