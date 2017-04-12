@@ -61,3 +61,27 @@ C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\DnD.Models.pd
 C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\EntityFramework.xml
 C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\obj\Debug\DnD.Client.csprojResolveAssemblyReference.cache
 >>>>>>> 1dead78b628ae463a9ed257148ee62294e93c8a8
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (2)\DnD\DnD.Client\bin\Debug\DnD.Client.exe.config
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (2)\DnD\DnD.Client\obj\Debug\DnD.Client.exe
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (2)\DnD\DnD.Client\obj\Debug\DnD.Client.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (2)\DnD\DnD.Client\obj\Debug\DnD.Client.csprojResolveAssemblyReference.cache
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (2)\DnD\DnD.Client\bin\Debug\DnD.Client.exe
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (2)\DnD\DnD.Client\bin\Debug\DnD.Client.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (2)\DnD\DnD.Client\bin\Debug\DnD.Data.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (2)\DnD\DnD.Client\bin\Debug\DnD.Models.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (2)\DnD\DnD.Client\bin\Debug\EntityFramework.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (2)\DnD\DnD.Client\bin\Debug\DnD.Data.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (2)\DnD\DnD.Client\bin\Debug\DnD.Models.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (2)\DnD\DnD.Client\bin\Debug\EntityFramework.xml
+C:\Users\Mihail\Desktop\project\DnD\DnD.Client\bin\Debug\DnD.Client.exe.config
+C:\Users\Mihail\Desktop\project\DnD\DnD.Client\obj\Debug\DnD.Client.exe
+C:\Users\Mihail\Desktop\project\DnD\DnD.Client\obj\Debug\DnD.Client.pdb
+C:\Users\Mihail\Desktop\project\DnD\DnD.Client\bin\Debug\DnD.Client.exe
+C:\Users\Mihail\Desktop\project\DnD\DnD.Client\bin\Debug\DnD.Client.pdb
+C:\Users\Mihail\Desktop\project\DnD\DnD.Client\bin\Debug\DnD.Data.dll
+C:\Users\Mihail\Desktop\project\DnD\DnD.Client\bin\Debug\DnD.Models.dll
+C:\Users\Mihail\Desktop\project\DnD\DnD.Client\bin\Debug\EntityFramework.dll
+C:\Users\Mihail\Desktop\project\DnD\DnD.Client\bin\Debug\DnD.Data.pdb
+C:\Users\Mihail\Desktop\project\DnD\DnD.Client\bin\Debug\DnD.Models.pdb
+C:\Users\Mihail\Desktop\project\DnD\DnD.Client\bin\Debug\EntityFramework.xml
+C:\Users\Mihail\Desktop\project\DnD\DnD.Client\obj\Debug\DnD.Client.csprojResolveAssemblyReference.cache
