@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Client\bin\Debug\DnD.Client.exe.config
 c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Client\bin\Debug\DnD.Client.exe
 c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Client\bin\Debug\DnD.Client.pdb
@@ -10,3 +11,65 @@ c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Client\bin\Debug\E
 c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Client\obj\Debug\DnD.Client.csprojResolveAssemblyReference.cache
 c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Client\obj\Debug\DnD.Client.exe
 c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Client\obj\Debug\DnD.Client.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Client\bin\Debug\DnD.Client.exe.config
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Client\obj\Debug\DnD.Client.exe
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Client\obj\Debug\DnD.Client.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Client\bin\Debug\DnD.Client.exe
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Client\bin\Debug\DnD.Client.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Client\bin\Debug\DnD.Data.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Client\bin\Debug\DnD.Models.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Client\bin\Debug\EntityFramework.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Client\bin\Debug\DnD.Data.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Client\bin\Debug\DnD.Models.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Client\bin\Debug\EntityFramework.xml
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Client\obj\Debug\DnD.Client.csprojResolveAssemblyReference.cache
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Client\bin\Debug\DnD.Client.exe.config
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Client\obj\Debug\DnD.Client.exe
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Client\obj\Debug\DnD.Client.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Client\bin\Debug\DnD.Client.exe
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Client\bin\Debug\DnD.Client.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Client\bin\Debug\DnD.Data.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Client\bin\Debug\DnD.Models.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Client\bin\Debug\EntityFramework.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Client\bin\Debug\DnD.Data.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Client\bin\Debug\DnD.Models.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Client\bin\Debug\EntityFramework.xml
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Client\obj\Debug\DnD.Client.csprojResolveAssemblyReference.cache
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Client\bin\Debug\DnD.Client.exe.config
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Client\obj\Debug\DnD.Client.exe
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Client\obj\Debug\DnD.Client.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Client\bin\Debug\DnD.Client.exe
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Client\bin\Debug\DnD.Client.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Client\bin\Debug\DnD.Data.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Client\bin\Debug\DnD.Models.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Client\bin\Debug\EntityFramework.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Client\bin\Debug\DnD.Data.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Client\bin\Debug\DnD.Models.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Client\bin\Debug\EntityFramework.xml
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Client\obj\Debug\DnD.Client.csprojResolveAssemblyReference.cache
+=======
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\DnD.Client.exe.config
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\obj\Debug\DnD.Client.exe
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\obj\Debug\DnD.Client.pdb
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\DnD.Client.exe
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\DnD.Client.pdb
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\DnD.Data.dll
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\DnD.Models.dll
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\EntityFramework.dll
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\DnD.Data.pdb
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\DnD.Models.pdb
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\bin\Debug\EntityFramework.xml
+C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Client\obj\Debug\DnD.Client.csprojResolveAssemblyReference.cache
+>>>>>>> 1dead78b628ae463a9ed257148ee62294e93c8a8
+C:\Users\Mihail\Downloads\DnD-master (1)\DnD-master\DnD.Client\bin\Debug\DnD.Client.exe.config
+C:\Users\Mihail\Downloads\DnD-master (1)\DnD-master\DnD.Client\obj\Debug\DnD.Client.exe
+C:\Users\Mihail\Downloads\DnD-master (1)\DnD-master\DnD.Client\obj\Debug\DnD.Client.pdb
+C:\Users\Mihail\Downloads\DnD-master (1)\DnD-master\DnD.Client\bin\Debug\DnD.Client.exe
+C:\Users\Mihail\Downloads\DnD-master (1)\DnD-master\DnD.Client\bin\Debug\DnD.Client.pdb
+C:\Users\Mihail\Downloads\DnD-master (1)\DnD-master\DnD.Client\bin\Debug\DnD.Data.dll
+C:\Users\Mihail\Downloads\DnD-master (1)\DnD-master\DnD.Client\bin\Debug\DnD.Models.dll
+C:\Users\Mihail\Downloads\DnD-master (1)\DnD-master\DnD.Client\bin\Debug\EntityFramework.dll
+C:\Users\Mihail\Downloads\DnD-master (1)\DnD-master\DnD.Client\bin\Debug\DnD.Data.pdb
+C:\Users\Mihail\Downloads\DnD-master (1)\DnD-master\DnD.Client\bin\Debug\DnD.Models.pdb
+C:\Users\Mihail\Downloads\DnD-master (1)\DnD-master\DnD.Client\bin\Debug\EntityFramework.xml
+C:\Users\Mihail\Downloads\DnD-master (1)\DnD-master\DnD.Client\obj\Debug\DnD.Client.csprojResolveAssemblyReference.cache

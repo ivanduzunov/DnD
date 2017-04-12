@@ -3,3 +3,18 @@ c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Models\bin\Debug\D
 c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Models\obj\Debug\DnD.Models.csprojResolveAssemblyReference.cache
 c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Models\obj\Debug\DnD.Models.dll
 c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Models\obj\Debug\DnD.Models.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Models\bin\Debug\DnD.Models.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Models\bin\Debug\DnD.Models.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Models\obj\Debug\DnD.Models.csprojResolveAssemblyReference.cache
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Models\obj\Debug\DnD.Models.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder\DnD\DnD.Models\obj\Debug\DnD.Models.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Models\bin\Debug\DnD.Models.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Models\bin\Debug\DnD.Models.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Models\obj\Debug\DnD.Models.csprojResolveAssemblyReference.cache
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Models\obj\Debug\DnD.Models.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnD\DnD.Models\obj\Debug\DnD.Models.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Models\bin\Debug\DnD.Models.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Models\bin\Debug\DnD.Models.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Models\obj\Debug\DnD.Models.csprojResolveAssemblyReference.cache
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Models\obj\Debug\DnD.Models.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Models\obj\Debug\DnD.Models.pdb

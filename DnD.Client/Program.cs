@@ -9,13 +9,32 @@ using System.ComponentModel;
 
 
 
+
 namespace DnD.Client
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            Utility.StartGame();        
+            Utility.StartGame();
+            Console.WindowHeight = 30;
+            Console.BufferHeight = 30;
+            Console.WindowWidth = 60;
+            Console.BufferWidth = 60;
+
+            DnDContext context = new DnDContext();
+            Utility.ChooseHero(context);
+
+            Utility.Next();
+
+          
+           
+           
+           
+
+
         }
+
+       
     }
 }
