@@ -10,6 +10,7 @@ namespace DnD.Data.Screans
     {
         public static void Show()
         {
+            //proba
             Console.Clear();
             Console.WindowHeight = 30;
             Console.BufferHeight = 30;

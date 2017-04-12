@@ -18,3 +18,8 @@ C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Models\bin\Debug\DnD
 C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Models\obj\Debug\DnD.Models.csprojResolveAssemblyReference.cache
 C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Models\obj\Debug\DnD.Models.dll
 C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Models\obj\Debug\DnD.Models.pdb
+C:\Users\Mihail\Desktop\project\DnD\DnD.Models\bin\Debug\DnD.Models.dll
+C:\Users\Mihail\Desktop\project\DnD\DnD.Models\bin\Debug\DnD.Models.pdb
+C:\Users\Mihail\Desktop\project\DnD\DnD.Models\obj\Debug\DnD.Models.csprojResolveAssemblyReference.cache
+C:\Users\Mihail\Desktop\project\DnD\DnD.Models\obj\Debug\DnD.Models.dll
+C:\Users\Mihail\Desktop\project\DnD\DnD.Models\obj\Debug\DnD.Models.pdb

@@ -14,7 +14,7 @@ namespace DnD.Client
     {
         public static void Main(string[] args)
         {
-            //Utility.StartGame();
+            Utility.StartGame();
             DnDContext context = new DnDContext();
 
             Console.WindowHeight = 30;
@@ -23,7 +23,7 @@ namespace DnD.Client
             Console.BufferWidth = 60;
 
            
-            //HeroSelection.Show(context);
+           HeroSelection.Show(context);
             MainMenu.Show();
 
            
