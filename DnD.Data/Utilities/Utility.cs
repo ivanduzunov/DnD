@@ -113,10 +113,14 @@ namespace DnD.Data
             }
 
             //-----------------------
+               var room = context.Rooms.Where(c => c.Id == 1).FirstOrDefault();
 
+<<<<<<< HEAD:DnD.Data/Utility.cs
+=======
 
             var room = context.Rooms.Where(c => c.Id == 1).FirstOrDefault();
 
+>>>>>>> 20a9c55a70183385b46e8c22b98c0f513718134e:DnD.Data/Utilities/Utility.cs
             PhaseTyper(room.Description);
 
 
