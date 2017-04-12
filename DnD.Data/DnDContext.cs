@@ -13,8 +13,6 @@ namespace DnD.Data
             : base("name=DnDContext")
         {
         }
-
-
         public virtual DbSet<Hero> Heroes { get; set; }
         public virtual DbSet<SpecialAbility> SpecialAbilities { get; set; }
         public virtual DbSet<Dragon>  Dragons{ get; set; }
@@ -22,8 +20,6 @@ namespace DnD.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
-
             modelBuilder.Entity<SpecialAbility>().Property(sa => sa.Description).IsOptional();            
         }
 

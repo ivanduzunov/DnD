@@ -24,18 +24,12 @@ namespace DnD.Client
 
             DnDContext context = new DnDContext();
             Utility.ChooseHero(context);
-<<<<<<< HEAD
-            Utility.Next();
-=======
+
+            Utility.Next(); 
+
             //Prosto e izvaden Hero v sledvashtiq method sled kraq na igrata shte tryabva da se dropne, za da ne se dublirat
-            Utility.Next();
-           
-           
-           
-
->>>>>>> 1dead78b628ae463a9ed257148ee62294e93c8a8
+        
         }
-
-       
+        
     }
 }
