@@ -60,7 +60,7 @@ namespace DnD.Data
 
                 var roomsList = new List<Room>()
             {
-                new Room { Description = "---{{{  You have entered the first room in the dungeon. In it, you will find your first challenge.  }}}---"},
+                new Room { Description = "---{{{  You have entered the first room in the dungeon. In  it, you will find your first challenge.  }}}---"},
                 new Room { Description = "---{{{  As you advance trough the duneon the enemies get stronger. Prepare yourself the next dragon awaits!   }}}---" }
             };
                 cnxt.Rooms.AddRange(roomsList);
@@ -85,118 +85,17 @@ namespace DnD.Data
             foreach (char c in text)
             {
                 Console.Write(c);
-                Thread.Sleep(50);
+                Thread.Sleep(25);
             }
             Console.WriteLine();
         }
-        public static void ChooseHero(DnDContext context)
-        {
-            Console.WindowHeight = 30;
-            Console.BufferHeight = 30;
-            Console.WindowWidth = 60;
-            Console.BufferWidth = 60;
-            Console.Clear();
-            PhaseTyper("First you need to choose your hero!");
-            foreach (Hero hero in context.Heroes)
-            {
-                PhaseTyper($"NAME: {hero.Name}, Description: {hero.Description}");
-            }
-
-            var heroes = context.Heroes.ToList();
-            int pageSize = heroes.Count();
-
-                     
-
-            int pointer = 1;
-
-            while (true)
-            {
 
 
-                Console.BackgroundColor = ConsoleColor.Black;
-                Console.ForegroundColor = ConsoleColor.White;
-
-                Console.Clear();
-                Console.WriteLine("First you need to choose your hero!");
-
-                int current = 1;
-                foreach (var hero in context.Heroes)
-                {
 
 
-                    if (current == pointer)
-                    {
-                        Console.BackgroundColor = ConsoleColor.White;
-                        Console.ForegroundColor = ConsoleColor.Black;
-                    }
-                    else
-                    {
-                        Console.BackgroundColor = ConsoleColor.Black;
-                        Console.ForegroundColor = ConsoleColor.White;
-                    }
-
-                    Console.WriteLine($"NAME: {hero.Name}, Description: {hero.Description}");
-
-                    current++;
-                }
-
-                var key = Console.ReadKey();
-                
-                switch (key.Key.ToString())
-                {
-
-                    case "Enter":
-                        
-                        var currentHero = heroes.Skip(pointer - 1).First();
-                        Introduction(currentHero);
-                        context.Heroes.Add(currentHero);
-                        context.SaveChanges();
-                        return;
-
-                   
-
-                    case "UpArrow":
-                        if (pointer > 1)
-                        {
-                            pointer--;
-                        }
-
-                        break;
-                    case "DownArrow":
-                        if (pointer < pageSize)
-                        {
-                            pointer++;
-                        }
-
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-
-
-        public static void Introduction(Hero ChosenHero)
-        {
-            Console.Clear();
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
-            PhaseTyper($"You choose {ChosenHero.Name.ToUpper()}!"); Console.WriteLine();
-            PhaseTyper($"Description: {ChosenHero.Description}");
-            PhaseTyper($"Attack Power: {ChosenHero.AttackPower}");
-            PhaseTyper($"Defence Power: {ChosenHero.DeffencePower}");
-            PhaseTyper($"Primary Health: {ChosenHero.Health}"); Console.WriteLine();
-            PhaseTyper($"Let your adventure begin!"); Console.WriteLine();
-
-            Console.WriteLine("Press any key to continue.");
-            Console.ReadLine();
-            Console.Clear();
-
-
-        }
-       
         public static void Next()
         {
+            Console.Clear();
             var context = new DnDContext();
             List<Hero> heroesList = context.Heroes.ToList();
             Hero hero = null;
@@ -213,9 +112,10 @@ namespace DnD.Data
 
             var room = context.Rooms.Where(c => c.Id == 1).FirstOrDefault();
 
-            Console.WriteLine(room.Description);
+            PhaseTyper(room.Description);
 
 
         }
     }
 }
+
