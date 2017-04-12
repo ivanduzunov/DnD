@@ -85,7 +85,7 @@ namespace DnD.Data
             foreach (char c in text)
             {
                 Console.Write(c);
-                Thread.Sleep(50);
+                Thread.Sleep(25);
             }
             Console.WriteLine();
         }
@@ -209,11 +209,9 @@ namespace DnD.Data
             }
 
             //-----------------------
+               var room = context.Rooms.Where(c => c.Id == 1).FirstOrDefault();
 
-
-            var room = context.Rooms.Where(c => c.Id == 1).FirstOrDefault();
-
-            Console.WriteLine(room.Description);
+            PhaseTyper(room.Description);
 
 
         }
