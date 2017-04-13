@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\bin\Debug\DnD.Data.dll.config
 c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\bin\Debug\DnD.Data.dll
 c:\users\mihail\documents\visual studio 2015\Projects\DnD\DnD.Data\bin\Debug\DnD.Data.pdb
@@ -47,7 +46,6 @@ C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Data\bin\Debug\Entit
 C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Data\obj\Debug\DnD.Data.csprojResolveAssemblyReference.cache
 C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Data\obj\Debug\DnD.Data.dll
 C:\Users\Stoyan Grancharov\Desktop\CSHARP\DnD\DnDupdate\DnD.Data\obj\Debug\DnD.Data.pdb
-=======
 C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Data\bin\Debug\DnD.Data.dll.config
 C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Data\bin\Debug\DnD.Data.dll
 C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Data\bin\Debug\DnD.Data.pdb
@@ -60,7 +58,6 @@ C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Data\bin\Debug\EntityFramework
 C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Data\obj\Debug\DnD.Data.csprojResolveAssemblyReference.cache
 C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Data\obj\Debug\DnD.Data.dll
 C:\Users\Mihail\Desktop\DnD-master\DnD-master\DnD.Data\obj\Debug\DnD.Data.pdb
->>>>>>> 1dead78b628ae463a9ed257148ee62294e93c8a8
 C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (2)\DnD\DnD.Data\obj\Debug\DnD.Data.csprojResolveAssemblyReference.cache
 C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (2)\DnD\DnD.Data\obj\Debug\DnD.Data.dll
 C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (2)\DnD\DnD.Data\obj\Debug\DnD.Data.pdb

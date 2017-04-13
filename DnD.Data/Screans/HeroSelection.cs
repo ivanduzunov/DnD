@@ -11,10 +11,10 @@ namespace DnD.Data.Screans
     {
         public static void Show(DnDContext context)
         {
-            Console.WindowHeight = 30;
-            Console.BufferHeight = 30;
-            Console.WindowWidth = 60;
-            Console.BufferWidth = 60;
+            Console.WindowHeight = 50;
+            Console.BufferHeight = 50;
+            Console.WindowWidth = 160;
+            Console.BufferWidth = 160;
             Console.Clear();
             Utility.PhaseTyper("First you need to choose your hero!");
             foreach (Hero hero in context.Heroes)

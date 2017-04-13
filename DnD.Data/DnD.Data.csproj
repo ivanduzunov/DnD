@@ -56,6 +56,9 @@
     <Compile Include="Screans\HeroSelection.cs" />
     <Compile Include="Screans\Introduction.cs" />
     <Compile Include="Screans\MainMenu.cs" />
+    <Compile Include="Screans\SpecialAbilitiesMenu.cs" />
+    <Compile Include="Screans\Validation.cs" />
+    <Compile Include="Utilities\SpecialAbilities.cs" />
     <Compile Include="Utilities\Utility.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,9 +71,7 @@
       <Name>DnD.Models</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Screans\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -13,10 +13,10 @@ namespace DnD.Data.Screans
         {
 
             Console.Clear();
-            Console.WindowHeight = 30;
-            Console.BufferHeight = 30;
-            Console.WindowWidth = 60;
-            Console.BufferWidth = 60;
+            Console.WindowHeight = 50;
+            Console.BufferHeight = 50;
+            Console.WindowWidth = 160;
+            Console.BufferWidth = 160;
             List<string> lines = new List<string>();
             string firstLine = "Continue";
             string secondLine = "How to play";
@@ -69,7 +69,7 @@ namespace DnD.Data.Screans
                         }
                         else if (pointer == 3)
                         {
-                            SpecialAbilitiesMenu();
+                            SpecialAbilitiesMenu.Show();
                             return;
                         }
                         else if (pointer == 4)
@@ -104,33 +104,7 @@ namespace DnD.Data.Screans
                 }
             }
         }
-        public static void SpecialAbilitiesMenu()
-        {
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Clear();
-            Utility.PhaseTyper("After each killed Dragon, You can choose one between these Special Abilities:"); Console.WriteLine();
-
-            var context = new DnDContext();
-
-            foreach (var item in context.SpecialAbilities)
-            {
-                Utility.PhaseTyper($"Name: {item.Name}. This Ability would give you {item.Power} {item.AblityType}");
-            }
-            Console.WriteLine();
-
-
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine("Back to Main Menu");
-            var key = Console.ReadKey();
-            switch (key.Key.ToString())
-            {
-                case "Enter":
-                    Show(); break;                 
-            }
-           
-        }
+        
         public static void HowToPlayMenu()
         {
             Console.Clear();

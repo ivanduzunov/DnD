@@ -11,6 +11,8 @@ namespace DnD.Data.Screans
     {
         public static void Show(Hero ChosenHero)
         {
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
