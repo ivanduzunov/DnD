@@ -59,10 +59,8 @@ namespace DnD.Data.Screans
                 {
 
                     case "Enter":
-                        var currentHero = heroes.Skip(pointer - 1).First();
-                        Introduction.Show(currentHero);
-                        context.Heroes.Add(currentHero);
-                        context.SaveChanges();
+                        var currentHero = heroes.Skip(pointer - 1).First();                     
+                        Utility.FirstRoom(currentHero, context);
                         return;
 
                     case "UpArrow":

@@ -59,7 +59,7 @@ namespace DnD.Data.Screans
                     case "Enter":
                         if (pointer == 1)
                         {
-                            Utility.Next();
+                            Console.WriteLine("Error");
                             return;
                         }
                         else if (pointer == 2)

@@ -19,12 +19,10 @@ namespace DnD.Client
             Console.BufferHeight = 50;
             Console.WindowWidth = 160;
             Console.BufferWidth = 160;
-
             Utility.StartGame();
-
             HeroSelection.Show(context);
-
-            MainMenu.Show();
+            
+            
             
         }
         

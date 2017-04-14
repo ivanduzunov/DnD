@@ -69,7 +69,7 @@ namespace DnD.Data
                 cnxt.SpecialAbilities.AddRange(specialAbilitiesList);
                 cnxt.SaveChanges();
 
-             
+
 
                 PhaseTyper("Ready!");
             }
@@ -94,23 +94,19 @@ namespace DnD.Data
             }
             Console.WriteLine();
         }
-        public static void Next()
+        public static void FirstRoom(Hero hero, DnDContext context)
         {
-            Console.Clear();
-            var context = new DnDContext();
-            List<Hero> heroesList = context.Heroes.ToList();
-            Hero hero = null;
-            for (int i = 0; i < heroesList.Count; i++)
-            {
-                if (i == heroesList.Count() - 1)
-                {
-                    hero = heroesList[i];
-                }
-            }
+            Screans.Introduction.Show(hero);
             
-            var room = context.Rooms.Where(c => c.Id == 1).FirstOrDefault();
+            
+            Random randDragon = new Random();
+            int randomInt = randDragon.Next(1, 3);
+            var dragon = context.Dragons.Where(d => d.Id == randomInt).FirstOrDefault();
+           
+            var room = context.Rooms.Where(r => r.Id == 1).FirstOrDefault();
+            Console.WriteLine("room:"); Console.WriteLine(room.Id); Console.WriteLine(room.Description);
 
-            PhaseTyper(room.Description);
+
 
 
         }
