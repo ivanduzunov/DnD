@@ -30,7 +30,7 @@ namespace DnD.Data.Screans
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Clear();
-                Console.WriteLine("Welcome to the main menu of the game");
+                Console.WriteLine("Welcome to the Main menu of the game");
                 Console.WriteLine();
                 int current = 1;
                 foreach (var line in lines)

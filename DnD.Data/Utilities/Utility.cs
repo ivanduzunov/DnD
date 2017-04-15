@@ -97,19 +97,219 @@ namespace DnD.Data
         public static void FirstRoom(Hero hero, DnDContext context)
         {
             Screans.Introduction.Show(hero);
-            
-            
+            var room = context.Rooms.Where(r => r.Id == 1).FirstOrDefault();
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Red;
+            PhaseTyper("You just entered into the First Dungeon!");
+            PhaseTyper(room.Description);
+            PhaseTyper("Its time for battle!"); Console.WriteLine();
+
             Random randDragon = new Random();
             int randomInt = randDragon.Next(1, 3);
-            var dragon = context.Dragons.Where(d => d.Id == randomInt).FirstOrDefault();
-           
-            var room = context.Rooms.Where(r => r.Id == 1).FirstOrDefault();
-            Console.WriteLine("room:"); Console.WriteLine(room.Id); Console.WriteLine(room.Description);
-
+            var dragonList = context.Dragons.Where(d => d.RoomId == 1).ToList();
+            var dragon = dragonList.Where(d => d.Id == randomInt).FirstOrDefault();
+            PhaseTyper($"You face your first Dragon - {dragon.Name.ToUpper()}, <{dragon.Description}>");
+            Console.WriteLine();
+            PhaseTyper("Press any key to enter battle! ");
+            Console.ReadKey();
+            Battle(hero, dragon);
 
 
 
         }
+        public static void Battle(Hero hero, Dragon dragon)
+        {
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Clear();
+            Console.WindowHeight = 50;
+            Console.BufferHeight = 50;
+            Console.WindowWidth = 160;
+            Console.BufferWidth = 160;
+            string secondLine = "LEFT";
+            string thirdLine = "RIGHT";
+            List<string> lines = new List<string>();
+            lines.Add(secondLine); lines.Add(thirdLine);
+
+            int pointer = 1;
+            int pageSize = 2;
+
+            while (hero.Health > 0 && dragon.Health > 0)
+            {
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Clear();
+                Console.WriteLine($"Choose hitting direction, {hero.Name}'s Attack Power is {hero.AttackPower}!");
+                Console.WriteLine();
+                int current = 1;
+
+                foreach (var line in lines)
+                {
+                    if (current == pointer)
+                    {
+                        Console.BackgroundColor = ConsoleColor.White;
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+                    else
+                    {
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+                    Console.WriteLine(line);
+
+                    current++;
+                }
+
+                var key = Console.ReadKey();
+
+                switch (key.Key.ToString())
+                {
+                    case "Enter":
+
+                        string heroHit = null;
+                        if (pointer == 1)
+                        {
+                            heroHit = "left";
+                        }
+                        else
+                        {
+                            heroHit = "right";
+                        }
+
+                        Random randDirection = new Random();
+                        heroHit = "left";
+                        List<string> dragonDefList = new List<string>() { "left", "right" };
+                        string dragonDef = dragonDefList[randDirection.Next(0, 1) + 1];
+
+                        if (!heroHit.Equals(dragonDef))
+                        {
+                            Console.Clear();
+                            Console.BackgroundColor = ConsoleColor.Black;
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            dragon.Health -= hero.AttackPower;
+                            PhaseTyper($"You hit the dragon successfully! {dragon.Name}'s remaining health {dragon.Health}");
+                            PhaseTyper("press any key to continue.");
+                            Console.ReadKey();
+                            Console.Clear();
+
+                        }
+                        else
+                        {
+                            if (hero.AttackPower > dragon.DeffencePower)
+                            {
+                                dragon.Health -= (hero.AttackPower - dragon.DeffencePower);
+                                Console.Clear();
+                                PhaseTyper($"The Dragon blocked your hit, but you still take him dammage. {dragon.Name}'s remaining health: {dragon.Health}");
+                                Console.WriteLine();
+                                PhaseTyper("press any key to continue.");
+                                Console.ReadKey();
+                                Console.Clear();
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                PhaseTyper($"{dragon.Name} blocked your hit!");
+                                Console.WriteLine();
+                                PhaseTyper("press any key to continue.");
+                                Console.ReadKey();
+                                Console.Clear();
+                            }
+                        }
+                        if (dragon.Health > 0)
+                        {
+                            Console.BackgroundColor = ConsoleColor.Black;
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.Clear();
+                            Random randDefHero = new Random();
+                            Random randHitDragon = new Random();
+                            int defHero = randDefHero.Next(1, 2);
+                            int hitDragon = randHitDragon.Next(1, 2);
+                            if (defHero != hitDragon)
+                            {
+                                hero.Health -= hitDragon;
+                                PhaseTyper($"{dragon.Name} hit you!");
+                                PhaseTyper($"Remaining Health: {hero.Health}");
+                                Console.WriteLine();
+                                PhaseTyper("press any key to continue.");
+                                Console.ReadKey();
+                                Console.Clear();
+
+                            }
+                            else
+                            {
+                                if (dragon.AttackPower > hero.DeffencePower)
+                                {
+                                    hero.Health -= (dragon.AttackPower - hero.DeffencePower);
+                                    Console.Clear();
+                                    PhaseTyper($"You blocked {dragon.Name}'s hit, but he is too powerful and still take you dammage!");
+                                    PhaseTyper($"Remaining health: {hero.Health}");
+                                    Console.WriteLine();
+                                    PhaseTyper("press any key to continue.");
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                }
+                                else
+                                {
+                                    Console.Clear();
+                                    PhaseTyper($"You blocked {dragon.Name}'s hit!");
+                                    Console.WriteLine();
+                                    PhaseTyper("press any key to continue.");
+                                    Console.ReadKey();
+                                    Console.Clear();
+                                }
+                            }
+
+                        }
+                        break;
+
+
+                    case "UpArrow":
+                        if (pointer > 1)
+                        {
+                            pointer--;
+                        }
+
+                        break;
+                    case "DownArrow":
+                        if (pointer < pageSize)
+                        {
+                            pointer++;
+                        }
+
+                        break;
+                    default:
+                        break;
+
+                }
+              
+            }
+
+            if (hero.Health > 0)
+            {
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Clear();
+                PhaseTyper($"YOU KILLED {dragon.Name.ToUpper()} !!!");
+                hero.KilledDragons.Add(dragon);
+                PhaseTyper("To continue your quest in the First Dungeon press any key!");
+                Console.ReadKey();
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Clear();
+                PhaseTyper($"{dragon.Name.ToUpper()} KILLED YOU!!! YOU LOST THE GAME");
+                PhaseTyper("Try again later !");
+                Console.WriteLine();
+            }
+        }
+        public static void UseSpecialAbility() { }
+
     }
+
 }
+
 
