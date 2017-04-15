@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using DnD.Models;
 
 
 namespace DnD.Data.Screans
 {
     public class MainMenu
     {
-        public static void Show()
+        public static void Show(Hero hero)
         {
 
             Console.Clear();
@@ -31,6 +33,7 @@ namespace DnD.Data.Screans
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Clear();
                 Console.WriteLine("Welcome to the Main menu of the game");
+                
                 Console.WriteLine();
                 int current = 1;
                 foreach (var line in lines)
@@ -59,8 +62,8 @@ namespace DnD.Data.Screans
                     case "Enter":
                         if (pointer == 1)
                         {
-                            Console.WriteLine("This will return you ti the game...");
-                            return;
+                            break;
+                            
                         }
                         else if (pointer == 2)
                         {
@@ -69,7 +72,7 @@ namespace DnD.Data.Screans
                         }
                         else if (pointer == 3)
                         {
-                            SpecialAbilitiesMenu.Show();
+                            SpecialAbilitiesMenu.Show(hero);
                             return;
                         }
                         else if (pointer == 4)
@@ -114,13 +117,9 @@ namespace DnD.Data.Screans
 
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine("Back to Main Menu");
-            var key = Console.ReadKey();
-            switch (key.Key.ToString())
-            {
-                case "Enter":
-                    Show(); break;
-            }
+
+            Console.WriteLine("Press any key to back to Main Menu.");
+            Console.ReadKey();
         }
     }
 }

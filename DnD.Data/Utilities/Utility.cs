@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using System.Data;
 
 namespace DnD.Data
 {
@@ -101,6 +102,7 @@ namespace DnD.Data
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Red;
+            
             PhaseTyper("You just entered into the First Dungeon!");
             PhaseTyper(room.Description);
             PhaseTyper("Its time for battle!"); Console.WriteLine();
@@ -109,11 +111,13 @@ namespace DnD.Data
             int randomInt = randDragon.Next(1, 3);
             var dragonList = context.Dragons.Where(d => d.RoomId == 1).ToList();
             var dragon = dragonList.Where(d => d.Id == randomInt).FirstOrDefault();
-            PhaseTyper($"You face your first Dragon - {dragon.Name.ToUpper()}, <{dragon.Description}>");
+            PhaseTyper($"You face your first Dragon - {dragon.Name.ToUpper()}, <<{dragon.Description}>>");
             Console.WriteLine();
             PhaseTyper("Press any key to enter battle! ");
             Console.ReadKey();
             Battle(hero, dragon);
+            Screans.MainMenu.Show(hero);
+          
 
 
 
@@ -219,7 +223,7 @@ namespace DnD.Data
                         if (dragon.Health > 0)
                         {
                             Console.BackgroundColor = ConsoleColor.Black;
-                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.Clear();
                             Random randDefHero = new Random();
                             Random randHitDragon = new Random();
@@ -278,6 +282,12 @@ namespace DnD.Data
                         }
 
                         break;
+                    case "Escape":
+                        Console.WriteLine("<PAUSE>");
+                        PhaseTyper("Press any key to continue.");
+                        Console.ReadKey();
+                        break;
+
                     default:
                         break;
 
@@ -288,7 +298,7 @@ namespace DnD.Data
             if (hero.Health > 0)
             {
                 Console.BackgroundColor = ConsoleColor.Black;
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.Clear();
                 PhaseTyper($"YOU KILLED {dragon.Name.ToUpper()} !!!");
                 hero.KilledDragons.Add(dragon);
@@ -299,14 +309,18 @@ namespace DnD.Data
             else
             {
                 Console.BackgroundColor = ConsoleColor.Black;
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.Clear();
                 PhaseTyper($"{dragon.Name.ToUpper()} KILLED YOU!!! YOU LOST THE GAME");
                 PhaseTyper("Try again later !");
                 Console.WriteLine();
             }
         }
-        public static void UseSpecialAbility() { }
+        public static void ChooseSpecialAbility(Hero hero)
+        {
+
+        }
+        
 
     }
 

@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DnD.Data;
+using DnD.Models;
 
 namespace DnD.Data.Screans
 {
    public  class SpecialAbilitiesMenu
     {
-        public static void Show()
+        public static void Show(Hero hero)
         {
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
@@ -33,7 +35,7 @@ namespace DnD.Data.Screans
                 Console.Clear();
                 Console.WriteLine("After each killed Dragon, You can choose one between these Special Abilities:"); Console.WriteLine();
                 Console.WriteLine("Press ESCAPE to go back to the Main Menu.");
-                Console.WriteLine("Press ENTER to use the selected spell.");
+                Console.WriteLine("Press ENTER to select the spell.");
                 Console.WriteLine();
                 int current = 1;
                 foreach (var item in context.SpecialAbilities)
@@ -83,26 +85,26 @@ namespace DnD.Data.Screans
                         {
                             using (DnDContext cntx = new DnDContext())
                             {
-                                Validation.Show(cntx.SpecialAbilities.FirstOrDefault(c => c.Name == "Abyss"));
+                                Validation.Show(cntx.SpecialAbilities.FirstOrDefault(c => c.Name == "Abyss"), hero);
                             }
                         }
                         if (pointer == 2)
                         {
                             using (DnDContext cntx = new DnDContext())
                             {
-                                Validation.Show(cntx.SpecialAbilities.FirstOrDefault(c => c.Name == "Heavens Shield"));
+                                Validation.Show(cntx.SpecialAbilities.FirstOrDefault(c => c.Name == "Heavens Shield"), hero);
                             }
                         }
                         if (pointer ==5)
                         {
                             using (DnDContext cntx = new DnDContext())
                             {
-                                Validation.Show(cntx.SpecialAbilities.FirstOrDefault(c => c.Name == "Heal"));
+                                Validation.Show(cntx.SpecialAbilities.FirstOrDefault(c => c.Name == "Heal"), hero);
                             }
                         }
                         break;
                     case "Escape":
-                        MainMenu.Show();
+                        MainMenu.Show(hero);
                         break;
                 }
             }

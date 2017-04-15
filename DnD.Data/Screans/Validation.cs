@@ -9,7 +9,7 @@ namespace DnD.Data.Screans
 {
    public class Validation
     {
-        public static void Show(SpecialAbility spell)
+        public static void Show(SpecialAbility spell, Hero hero)
         {
 
             string seconLine = "Yes";
@@ -26,7 +26,7 @@ namespace DnD.Data.Screans
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
 
-                Console.WriteLine($"Are you sure you want to use {spell.Name} to {spell.Description}");
+                Console.WriteLine($"Are you sure you want to add {spell.Name} to your Hero");
 
 
                 Console.WriteLine();
@@ -78,18 +78,18 @@ namespace DnD.Data.Screans
                         break;
 
                     case "Escape":
-                        SpecialAbilitiesMenu.Show();
+                        SpecialAbilitiesMenu.Show(hero);
                         return;
 
                     case "Enter":
                         if (pointer == 1 )
                         {
-                            SpecialAbilities.SpecialAbilities.Use(spell.Name);
+                            hero.SpecialAbilities.Add(spell);
                             return;
                         }
                         if (pointer == 2)
                         {
-                            SpecialAbilitiesMenu.Show();
+                            SpecialAbilitiesMenu.Show(hero);
                             return;
                         }
                         break;
