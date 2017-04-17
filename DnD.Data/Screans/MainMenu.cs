@@ -11,7 +11,7 @@ namespace DnD.Data.Screans
 {
     public class MainMenu
     {
-        public static void Show(Hero hero)
+        public static void Show()
         {
 
             Console.Clear();
@@ -62,20 +62,19 @@ namespace DnD.Data.Screans
                     case "Enter":
                         if (pointer == 1)
                         {
-                            break;
-                            
+                            return;             
                         }
-                        else if (pointer == 2)
+                        if (pointer == 2)
                         {
                             HowToPlayMenu();
                             return;
                         }
-                        else if (pointer == 3)
+                        if (pointer == 3)
                         {
-                            SpecialAbilitiesMenu.Show(hero);
+                            SpecialAbilitiesMenu.Show();
                             return;
                         }
-                        else if (pointer == 4)
+                        if (pointer == 4)
                         {       
                             Console.BackgroundColor = ConsoleColor.Black;
                             Console.ForegroundColor = ConsoleColor.Red;
@@ -114,12 +113,9 @@ namespace DnD.Data.Screans
             Console.WriteLine("How to play"); Console.WriteLine();
             Utility.PhaseTyper("Something Here...");
             Console.WriteLine();
-
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
-
             Console.WriteLine("Press any key to back to Main Menu.");
             Console.ReadKey();
+            MainMenu.Show();
         }
     }
 }

@@ -97,32 +97,77 @@ namespace DnD.Data
         }
         public static void FirstRoom(Hero hero, DnDContext context)
         {
+           
             Screans.Introduction.Show(hero);
+            Screans.MainMenu.Show();
             var room = context.Rooms.Where(r => r.Id == 1).FirstOrDefault();
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Red;
-            
+
             PhaseTyper("You just entered into the First Dungeon!");
             PhaseTyper(room.Description);
             PhaseTyper("Its time for battle!"); Console.WriteLine();
-
-            Random randDragon = new Random();
-            int randomInt = randDragon.Next(1, 3);
-            var dragonList = context.Dragons.Where(d => d.RoomId == 1).ToList();
-            var dragon = dragonList.Where(d => d.Id == randomInt).FirstOrDefault();
-            PhaseTyper($"You face your first Dragon - {dragon.Name.ToUpper()}, <<{dragon.Description}>>");
-            Console.WriteLine();
-            PhaseTyper("Press any key to enter battle! ");
+            PhaseTyper("Press any key to continue..");
             Console.ReadKey();
-            Battle(hero, dragon);
-            Screans.MainMenu.Show(hero);
-          
 
 
+
+
+            Battle(hero, context, room.Id);
+            ChooseSpecialAbility(hero);
+            Screans.MainMenu.Show();
+            Battle(hero, context, room.Id);
+            ChooseSpecialAbility(hero);
+            Screans.MainMenu.Show();
+            SecondRoom(hero, context);
 
         }
-        public static void Battle(Hero hero, Dragon dragon)
+        public static void SecondRoom(Hero hero, DnDContext context)
+        {
+            var room = context.Rooms.Where(r => r.Id == 2).FirstOrDefault();
+
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Red;
+
+            PhaseTyper("Congratulations! You proceed to the Second Dungeon!");
+            PhaseTyper(room.Description);
+            PhaseTyper($"{hero.Name}'s health: {hero.Health}");
+            PhaseTyper("Its time for battle again!"); Console.WriteLine();
+            PhaseTyper("Press any key to continue..");
+            Console.ReadKey();
+
+            Battle(hero, context, room.Id);
+            ChooseSpecialAbility(hero);
+            Screans.MainMenu.Show();
+            Battle(hero, context, room.Id);
+            ChooseSpecialAbility(hero);
+            Screans.MainMenu.Show();
+            ThirdRoom(hero, context);
+        }
+        public static void ThirdRoom(Hero hero, DnDContext context)
+        {
+            var room = context.Rooms.Where(r => r.Id == 3).FirstOrDefault();
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Red;
+
+            PhaseTyper("Congratulations! You entered to the Final Dungeon!");
+            PhaseTyper($"{hero.Name}'s health: {hero.Health}");
+            PhaseTyper(room.Description);
+            PhaseTyper("Fight! "); Console.WriteLine();
+            PhaseTyper("Press any key to continue..");
+            Console.ReadKey();
+
+            Battle(hero, context, room.Id);
+            ChooseSpecialAbility(hero);
+            Screans.MainMenu.Show();
+            Battle(hero, context, room.Id);
+            ChooseSpecialAbility(hero);
+            Screans.MainMenu.Show();
+        }
+        public static void Battle(Hero hero, DnDContext context, int roomId)
         {
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Red;
@@ -131,6 +176,16 @@ namespace DnD.Data
             Console.BufferHeight = 50;
             Console.WindowWidth = 160;
             Console.BufferWidth = 160;
+            Random randDragon = new Random();
+            var dragonList = context.Dragons.Where(d => d.Room.Id == roomId && d.Killers.Count == 0).ToList();
+            int randomInt = randDragon.Next(0, dragonList.Count - 1);
+            var dragon = dragonList[randomInt];
+            PhaseTyper($"You face a Dragon - {dragon.Name.ToUpper()}, <<{dragon.Description}>>");
+            PhaseTyper($"Your Health: {hero.Health}");
+            PhaseTyper($"Dragon's Health: {dragon.Health}");
+            Console.WriteLine();
+            PhaseTyper("Press any key to enter battle! ");
+            Console.ReadKey();
             string secondLine = "LEFT";
             string thirdLine = "RIGHT";
             List<string> lines = new List<string>();
@@ -192,6 +247,10 @@ namespace DnD.Data
                             Console.BackgroundColor = ConsoleColor.Black;
                             Console.ForegroundColor = ConsoleColor.Red;
                             dragon.Health -= hero.AttackPower;
+                            if (dragon.Health <= 0)
+                            {
+                                break;
+                            }
                             PhaseTyper($"You hit the dragon successfully! {dragon.Name}'s remaining health {dragon.Health}");
                             PhaseTyper("press any key to continue.");
                             Console.ReadKey();
@@ -203,6 +262,10 @@ namespace DnD.Data
                             if (hero.AttackPower > dragon.DeffencePower)
                             {
                                 dragon.Health -= (hero.AttackPower - dragon.DeffencePower);
+                                if (dragon.Health <= 0)
+                                {
+                                    break;
+                                }
                                 Console.Clear();
                                 PhaseTyper($"The Dragon blocked your hit, but you still take him dammage. {dragon.Name}'s remaining health: {dragon.Health}");
                                 Console.WriteLine();
@@ -232,6 +295,10 @@ namespace DnD.Data
                             if (defHero != hitDragon)
                             {
                                 hero.Health -= hitDragon;
+                                if (hero.Health <= 0)
+                                {
+                                    break;
+                                }
                                 PhaseTyper($"{dragon.Name} hit you!");
                                 PhaseTyper($"Remaining Health: {hero.Health}");
                                 Console.WriteLine();
@@ -245,6 +312,10 @@ namespace DnD.Data
                                 if (dragon.AttackPower > hero.DeffencePower)
                                 {
                                     hero.Health -= (dragon.AttackPower - hero.DeffencePower);
+                                    if (hero.Health <= 0)
+                                    {
+                                        break;
+                                    }
                                     Console.Clear();
                                     PhaseTyper($"You blocked {dragon.Name}'s hit, but he is too powerful and still take you dammage!");
                                     PhaseTyper($"Remaining health: {hero.Health}");
@@ -292,7 +363,7 @@ namespace DnD.Data
                         break;
 
                 }
-              
+
             }
 
             if (hero.Health > 0)
@@ -302,7 +373,9 @@ namespace DnD.Data
                 Console.Clear();
                 PhaseTyper($"YOU KILLED {dragon.Name.ToUpper()} !!!");
                 hero.KilledDragons.Add(dragon);
+                context.SaveChanges();
                 PhaseTyper("To continue your quest in the First Dungeon press any key!");
+                PhaseTyper("When you kill a dragon you receive free Special Ability! You can choose it from the Main Menu");
                 Console.ReadKey();
                 Console.WriteLine();
             }
@@ -313,14 +386,168 @@ namespace DnD.Data
                 Console.Clear();
                 PhaseTyper($"{dragon.Name.ToUpper()} KILLED YOU!!! YOU LOST THE GAME");
                 PhaseTyper("Try again later !");
+                FinalScreen(hero);
                 Console.WriteLine();
             }
         }
         public static void ChooseSpecialAbility(Hero hero)
         {
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Clear();
+            Console.WriteLine("Choose Special Ability!"); Console.WriteLine();
+            Console.WriteLine("Press ESCAPE to go back to the Main Menu.");
+            Console.WriteLine("To apply the ability press ENTER.");
+            Console.WriteLine();
+            var context = new DnDContext();
+            int pointer = 1;
+            foreach (var item in context.SpecialAbilities)
+            {
+                Console.WriteLine($"Name: {item.Name}. This Ability would give you {item.Power} {item.AblityType}");
+            }
+            Console.WriteLine("Back to Main Menu");
+            while (true)
+            {
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+
+                Console.Clear();
+                Console.WriteLine("After each killed Dragon, You can choose one of these Special Abilities:"); Console.WriteLine();
+                Console.WriteLine("Press ENTER to select the Ability.");
+                Console.WriteLine();
+                int current = 1;
+                foreach (var item in context.SpecialAbilities)
+                {
+                    if (current == pointer)
+                    {
+                        Console.BackgroundColor = ConsoleColor.White;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                    }
+                    else
+                    {
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+
+                    Console.WriteLine($"Name: {item.Name}. This Ability would give you {item.Power} {item.AblityType}");
+                    current++;
+                }
+                Console.WriteLine();
+
+                current++;
+                Console.WriteLine();
+
+
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                var key = Console.ReadKey();
+                switch (key.Key.ToString())
+                {
+                    case "DownArrow":
+                        if (pointer < 5)
+                        {
+                            pointer++;
+                        }
+                        break;
+
+                    case "UpArrow":
+                        if (pointer > 1)
+                        {
+                            pointer--;
+                        }
+                        break;
+
+                    case "Enter":
+                        if (pointer == 1)
+                        {
+                            Console.Clear();
+
+                            var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Abyss");
+                            ApplySpecialAbility(hero, ability);
+                            return;
+
+                        }
+                        if (pointer == 2)
+                        {
+                            Console.Clear();
+
+                            var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Heavens Shield");
+                            ApplySpecialAbility(hero, ability);
+                            return;
+
+
+                        }
+                        if (pointer == 3)
+                        {
+                            Console.Clear();
+
+                            var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Fireball");
+                            ApplySpecialAbility(hero, ability);
+                            return;
+                        }
+                        if (pointer == 4)
+                        {
+                            Console.Clear();
+
+                            var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Frostball");
+                            ApplySpecialAbility(hero, ability);
+                            return;
+                        }
+                        if (pointer == 5)
+                        {
+
+                            Console.Clear();
+
+                            var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Heal");
+                            ApplySpecialAbility(hero, ability);
+                            return;
+                        }
+                        break;
+
+                }
+            }
+        }
+        public static void ApplySpecialAbility(Hero hero, SpecialAbility ability)
+        {
+            if (ability.AblityType == SpecialAbilityType.Attack)
+            {
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+                hero.AttackPower += ability.Power;
+                PhaseTyper($"Your Attack power increased by {ability.Power}");
+                PhaseTyper($"Total Attack Power: {hero.AttackPower}");
+                Console.WriteLine();
+                PhaseTyper("Press any key to continue...");
+                Console.ReadKey();
+            }
+            else if (ability.AblityType == SpecialAbilityType.Deffence)
+            {
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+                hero.DeffencePower += ability.Power;
+                PhaseTyper($"Your Deffence power increased by {ability.Power}");
+                PhaseTyper($"Total Attack Power: {hero.DeffencePower}");
+                Console.WriteLine();
+                PhaseTyper("Press any key to continue...");
+                Console.ReadKey();
+            }
 
         }
-        
+        public static void FinalScreen(Hero hero)
+        {
+            PhaseTyper("Your game is over");
+            PhaseTyper($"Your hero was {hero.Name}");
+            Console.WriteLine(); Console.WriteLine();
+            PhaseTyper("Killed Dragons"); Console.WriteLine();
+            foreach (var item in hero.KilledDragons)
+            {
+                PhaseTyper($"{item.Name}, {item.Description}");
+            }
+            var context = new DnDContext();
+            context.Database.Delete();
+        }
+
 
     }
 
