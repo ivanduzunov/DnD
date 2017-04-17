@@ -63,19 +63,18 @@ namespace DnD.Data.Screans
                         if (pointer == 1)
                         {
                             return;
-                            
                         }
-                        else if (pointer == 2)
+                        if (pointer == 2)
                         {
                             HowToPlay.Show(hero);
                             return;
                         }
-                        else if (pointer == 3)
+                        if (pointer == 3)
                         {
                             SpecialAbilitiesMenu.Show(hero);
                             return;
                         }
-                        else if (pointer == 4)
+                        if (pointer == 4)
                         {       
                             Console.BackgroundColor = ConsoleColor.Black;
                             Console.ForegroundColor = ConsoleColor.Red;
@@ -109,7 +108,8 @@ namespace DnD.Data.Screans
                 }
             }
         }
-        
-        
+          
+
+      
     }
 }

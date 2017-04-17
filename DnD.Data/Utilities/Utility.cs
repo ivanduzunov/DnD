@@ -70,7 +70,7 @@ namespace DnD.Data
             };
                 cnxt.SpecialAbilities.AddRange(specialAbilitiesList);
                 cnxt.SaveChanges();
-                
+
                 PhaseTyper("Ready!");
             }
             else
@@ -93,6 +93,81 @@ namespace DnD.Data
                 Thread.Sleep(25);
             }
             Console.WriteLine();
+        }
+
+
+
+        public static void FirstRoom(Hero hero, DnDContext context)
+        {
+
+            Screans.Introduction.Show(hero);
+            Screans.MainMenu.Show(hero);
+            var room = context.Rooms.Where(r => r.Id == 1).FirstOrDefault();
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Red;
+
+            PhaseTyper("You just entered into the First Dungeon!");
+            PhaseTyper(room.Description);
+            PhaseTyper("Its time for battle!"); Console.WriteLine();
+            PhaseTyper("Press any key to continue..");
+            Console.ReadKey();
+
+
+
+
+            Battle(hero, context, room.Id);
+            ChooseSpecialAbility.Show(hero);
+            Screans.MainMenu.Show(hero);
+            Battle(hero, context, room.Id);
+            ChooseSpecialAbility.Show(hero);
+            Screans.MainMenu.Show(hero);
+            SecondRoom(hero, context);
+
+        }
+        public static void SecondRoom(Hero hero, DnDContext context)
+        {
+            var room = context.Rooms.Where(r => r.Id == 2).FirstOrDefault();
+
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Red;
+
+            PhaseTyper("Congratulations! You proceed to the Second Dungeon!");
+            PhaseTyper(room.Description);
+            PhaseTyper($"{hero.Name}'s health: {hero.Health}");
+            PhaseTyper("Its time for battle again!"); Console.WriteLine();
+            PhaseTyper("Press any key to continue..");
+            Console.ReadKey();
+
+            Battle(hero, context, room.Id);
+            ChooseSpecialAbility.Show(hero);
+            Screans.MainMenu.Show(hero);
+            Battle(hero, context, room.Id);
+            ChooseSpecialAbility.Show(hero);
+            Screans.MainMenu.Show(hero);
+            ThirdRoom(hero, context);
+        }
+        public static void ThirdRoom(Hero hero, DnDContext context)
+        {
+            var room = context.Rooms.Where(r => r.Id == 3).FirstOrDefault();
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Red;
+
+            PhaseTyper("Congratulations! You entered to the Final Dungeon!");
+            PhaseTyper($"{hero.Name}'s health: {hero.Health}");
+            PhaseTyper(room.Description);
+            PhaseTyper("Fight! "); Console.WriteLine();
+            PhaseTyper("Press any key to continue..");
+            Console.ReadKey();
+
+            Battle(hero, context, room.Id);
+            ChooseSpecialAbility.Show(hero);
+            Screans.MainMenu.Show(hero);
+            Battle(hero, context, room.Id);
+            ChooseSpecialAbility.Show(hero);
+            Screans.MainMenu.Show(hero);
         }
 
         public static void Battle(Hero hero, DnDContext context, int roomId)
@@ -292,7 +367,10 @@ namespace DnD.Data
 
                 }
 
+
             }
+
+
             if (hero.Health > 0)
             {
                 Console.BackgroundColor = ConsoleColor.Black;
@@ -314,14 +392,16 @@ namespace DnD.Data
                 PhaseTyper($"{dragon.Name.ToUpper()} KILLED YOU!!! YOU LOST THE GAME");
                 PhaseTyper("Try again later !");
                 FinalScrean.Show(hero);
+
+
                 Console.WriteLine();
                 Console.ReadLine();
                 Utility.StartGame();
             }
         }
-
     }
-
 }
+      
+         
 
 

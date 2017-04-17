@@ -8,6 +8,7 @@ using DnD.Models;
 using System.ComponentModel;
 using DnD.Data.Screans;
 
+
 namespace DnD.Client
 {
     public class Program
@@ -21,7 +22,11 @@ namespace DnD.Client
             Console.BufferWidth = 160;
             Utility.StartGame();
             HeroSelection.Show(context);
+
             
         }
+        
+        }
+    
     }
-}
+
