@@ -62,12 +62,12 @@ namespace DnD.Data.Screans
                     case "Enter":
                         if (pointer == 1)
                         {
-                            break;
+                            return;
                             
                         }
                         else if (pointer == 2)
                         {
-                            HowToPlayMenu();
+                            HowToPlay.Show(hero);
                             return;
                         }
                         else if (pointer == 3)
@@ -81,6 +81,8 @@ namespace DnD.Data.Screans
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.Clear();                           
                             Console.WriteLine("Thank you for playing Dragons and Dungeons! Press any key to Exit the Game");
+                            DnDContext context = new DnDContext();
+                            context.Database.Delete();
                             Console.ReadKey();
                             Console.Clear();
                             Environment.Exit(0);
@@ -108,18 +110,6 @@ namespace DnD.Data.Screans
             }
         }
         
-        public static void HowToPlayMenu()
-        {
-            Console.Clear();
-            Console.WriteLine("How to play"); Console.WriteLine();
-            Utility.PhaseTyper("Something Here...");
-            Console.WriteLine();
-
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
-
-            Console.WriteLine("Press any key to back to Main Menu.");
-            Console.ReadKey();
-        }
+        
     }
 }

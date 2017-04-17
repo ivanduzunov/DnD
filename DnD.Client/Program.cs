@@ -22,9 +22,6 @@ namespace DnD.Client
             Utility.StartGame();
             HeroSelection.Show(context);
             
-            
-            
         }
-        
     }
 }

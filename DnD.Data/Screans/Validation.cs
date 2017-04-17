@@ -78,14 +78,15 @@ namespace DnD.Data.Screans
                         break;
 
                     case "Escape":
-                        SpecialAbilitiesMenu.Show(hero);
+                        ChooseSpecialAbility.Show(hero);
                         return;
 
                     case "Enter":
                         if (pointer == 1 )
                         {
                             hero.SpecialAbilities.Add(spell);
-                            return;
+                            SpecialAbilities.SpecialAbilities.Use(hero);
+                            MainMenu.Show(hero);
                         }
                         if (pointer == 2)
                         {

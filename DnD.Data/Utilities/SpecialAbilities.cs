@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DnD.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,52 +9,74 @@ namespace DnD.Data.SpecialAbilities
 {
    public class SpecialAbilities
     {
-        public static void Use(string spell)
+        public static void Use( Hero hero)
         {
-            if (spell == "Abyss")
+            var spells = hero.SpecialAbilities;
+            foreach (var s in spells)
             {
-                using (DnDContext context = new DnDContext())
+                if (s.AblityType == SpecialAbilityType.Attack)
                 {
-                  var  hero = context.Heroes.OrderByDescending(a => a.Id).First();
-                  var  abyss = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Abyss");
-                    hero.AttackPower += abyss.Power;
-                    context.SaveChanges();
-                    Utility.PhaseTyper($"{hero.Name} increased his attack power by {abyss.Power}.....");
+                    hero.AttackPower += s.Power;
+                    Utility.PhaseTyper($"{hero.Name} increased his attack power by {s.Power}.....");
 
                     Console.WriteLine("Press any key to continue!");
                     Console.ReadLine();
                 }
+                if (s.AblityType == SpecialAbilityType.Deffence)
+                {
+                    hero.DeffencePower += s.Power;
+                    Utility.PhaseTyper($"{hero.Name} increased his defence power by {s.Power}.....");
+
+                    Console.WriteLine("Press any key to continue!");
+                    Console.ReadLine();
+                }
+            }
+
+
+            //if (spell == "Abyss")
+            //{
+            //    using (DnDContext context = new DnDContext())
+            //    {
+            //       hero = context.Heroes.OrderByDescending(a => a.Id).First();
+            //      var  abyss = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Abyss");
+            //        hero.AttackPower += abyss.Power;
+            //        context.SaveChanges();
+            //        Utility.PhaseTyper($"{hero.Name} increased his attack power by {abyss.Power}.....");
+
+            //        Console.WriteLine("Press any key to continue!");
+            //        Console.ReadLine();
+            //    }
                 
-            }
+            //}
 
-            if (spell == "Heavens Shield")
-            {
-                using (DnDContext context = new DnDContext())
-                {
-                    var hero = context.Heroes.OrderByDescending(a => a.Id).First();
-                    var heavensShield = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Heavens Shield");
-                    hero.DeffencePower += heavensShield.Power;
-                    context.SaveChanges();
-                    Utility.PhaseTyper($"{hero.Name} increased his defence power by {heavensShield.Power}.....");
+            //if (spell == "Heavens Shield")
+            //{
+            //    using (DnDContext context = new DnDContext())
+            //    {
+            //         hero = context.Heroes.OrderByDescending(a => a.Id).First();
+            //        var heavensShield = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Heavens Shield");
+            //        hero.DeffencePower += heavensShield.Power;
+            //        context.SaveChanges();
+            //        Utility.PhaseTyper($"{hero.Name} increased his defence power by {heavensShield.Power}.....");
 
-                    Console.WriteLine("Press any key to continue!");
-                    Console.ReadLine();
-                }
-             }
-            if (spell== "Heal")
-            {
-                using (DnDContext context = new DnDContext())
-                {
-                    var hero = context.Heroes.OrderByDescending(a => a.Id).First();
-                    var heal = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Heal");
-                    hero.Health += heal.Power;
-                    context.SaveChanges();
-                    Utility.PhaseTyper($"{hero.Name} increased his health by {heal.Power}.....");
+            //        Console.WriteLine("Press any key to continue!");
+            //        Console.ReadLine();
+            //    }
+            // }
+            //if (spell== "Heal")
+            //{
+            //    using (DnDContext context = new DnDContext())
+            //    {
+            //        hero = context.Heroes.OrderByDescending(a => a.Id).First();
+            //        var heal = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Heal");
+            //        hero.Health += heal.Power;
+            //        context.SaveChanges();
+            //        Utility.PhaseTyper($"{hero.Name} increased his health by {heal.Power}.....");
 
-                    Console.WriteLine("Press any key to continue!");
-                    Console.ReadLine();
-                }
-            }
+            //        Console.WriteLine("Press any key to continue!");
+            //        Console.ReadLine();
+            //    }
+            //}
 
         }
     }
