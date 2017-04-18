@@ -17,6 +17,7 @@ namespace DnD.Data.Screans
             Console.BufferWidth = 160;
             Console.Clear();
             Utility.PhaseTyper("First you need to choose your hero!");
+            Console.WriteLine();
             foreach (Hero hero in context.Heroes)
             {
                 Utility.PhaseTyper($"NAME: {hero.Name}, Description: {hero.Description}");

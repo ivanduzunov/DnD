@@ -168,6 +168,7 @@ namespace DnD.Data
             Battle(hero, context, room.Id);
             ChooseSpecialAbility.Show(hero);
             Screans.MainMenu.Show(hero);
+            FinalScrean.Show(hero);
         }
 
         public static void Battle(Hero hero, DnDContext context, int roomId)
@@ -242,9 +243,9 @@ namespace DnD.Data
                         }
 
                         Random randDirection = new Random();
-                        heroHit = "left";
+
                         List<string> dragonDefList = new List<string>() { "left", "right" };
-                        string dragonDef = dragonDefList[randDirection.Next(0, 1) + 1];
+                        string dragonDef = dragonDefList[randDirection.Next(0, 1)];
 
                         if (!heroHit.Equals(dragonDef))
                         {
