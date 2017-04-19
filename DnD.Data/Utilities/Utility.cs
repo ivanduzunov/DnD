@@ -19,12 +19,12 @@ namespace DnD.Data
 
             if (start.Equals("start") && cnxt.Heroes.Count().Equals(0))
             {
-                Console.WriteLine("Loading");
+               
                 cnxt.Database.Initialize(true);
 
                 var heroesList = new List<Hero>()
             {
-                new Hero { Name = "Even", Description = "Human", AttackPower = 30, DeffencePower = 30, Health = 100 },
+                new Hero { Name = "Even", Description = "Human", AttackPower = 150, DeffencePower = 30, Health = 100 },
                 new Hero { Name = "Grorsis", Description = "Dwarf", AttackPower = 20, DeffencePower = 40, Health = 90 },
                 new Hero { Name = "Enfangriel", Description = "Elf", AttackPower = 20, DeffencePower = 40, Health = 90 },
                 new Hero { Name = "Theonanthok", Description = "Berbarian", AttackPower = 35, DeffencePower = 25, Health = 110 },
@@ -62,11 +62,13 @@ namespace DnD.Data
 
                 var specialAbilitiesList = new List<SpecialAbility>()
             {
-                new SpecialAbility { Name = "Abyss", Description="Increase the attack power", AblityType = SpecialAbilityType.Attack, Power = 20 },
-                new SpecialAbility { Name = "Heavens Shield", Description="Increase the defence power", AblityType = SpecialAbilityType.Deffence, Power = 30 },
-                new SpecialAbility { Name = "Fireball", Description= "Shoot a fireball at your enemy", AblityType = SpecialAbilityType.Attack, Power = 80 },
-                new SpecialAbility { Name = "Frostball", Description= "Deal small damage and make your opponent skip a turn", AblityType = SpecialAbilityType.Attack, Power = 30 },
-                new SpecialAbility { Name = "Heal", Description = "Heal a small amount of your life", AblityType = SpecialAbilityType.Deffence , Power = 70  },
+                new SpecialAbility { Name = "Dragon Hunter Axe", Description="Increase the attack power", AblityType = SpecialAbilityType.Attack, Power = 20 },
+                new SpecialAbility { Name = "Heavens Shield", Description="Increase the defence power", AblityType = SpecialAbilityType.Deffence, Power = 10 },
+                new SpecialAbility { Name = "Sword Of Balance", Description= "You become balanced", AblityType = SpecialAbilityType.Attack, Power = 15 },
+                new SpecialAbility { Name = "Dragon's Tooth Sword", Description= "The dragon's bane", AblityType = SpecialAbilityType.Attack, Power = 20 },
+                new SpecialAbility { Name = "A Bucket Helmet", Description = "Best armor in the game", AblityType = SpecialAbilityType.Deffence , Power = 20 },
+                new SpecialAbility { Name = "The One Ring", Description = "It glows in the dark", AblityType = SpecialAbilityType.Deffence , Power = 15  },
+                new SpecialAbility { Name = "Lightsaber", Description = "Original idea", AblityType = SpecialAbilityType.Attack , Power = 15  },
             };
                 cnxt.SpecialAbilities.AddRange(specialAbilitiesList);
                 cnxt.SaveChanges();
@@ -78,11 +80,7 @@ namespace DnD.Data
                 PhaseTyper("Ready!");
             }
 
-            //PhaseTyper("Choose your hero!");
-            //foreach (Hero hero in cnxt.Heroes)
-            //{
-            //    PhaseTyper($"NAME: {hero.Name}, Description: {hero.Description}");
-            //}
+            
         }
         public static void PhaseTyper(string text)
         {
@@ -94,83 +92,6 @@ namespace DnD.Data
             }
             Console.WriteLine();
         }
-
-
-
-        public static void FirstRoom(Hero hero, DnDContext context)
-        {
-
-            Screans.Introduction.Show(hero);
-            Screans.MainMenu.Show(hero);
-            var room = context.Rooms.Where(r => r.Id == 1).FirstOrDefault();
-            Console.Clear();
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.Red;
-
-            PhaseTyper("You just entered into the First Dungeon!");
-            PhaseTyper(room.Description);
-            PhaseTyper("Its time for battle!"); Console.WriteLine();
-            PhaseTyper("Press any key to continue..");
-            Console.ReadKey();
-
-
-
-
-            Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero);
-            Screans.MainMenu.Show(hero);
-            Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero);
-            Screans.MainMenu.Show(hero);
-            SecondRoom(hero, context);
-
-        }
-        public static void SecondRoom(Hero hero, DnDContext context)
-        {
-            var room = context.Rooms.Where(r => r.Id == 2).FirstOrDefault();
-
-            Console.Clear();
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.Red;
-
-            PhaseTyper("Congratulations! You proceed to the Second Dungeon!");
-            PhaseTyper(room.Description);
-            PhaseTyper($"{hero.Name}'s health: {hero.Health}");
-            PhaseTyper("Its time for battle again!"); Console.WriteLine();
-            PhaseTyper("Press any key to continue..");
-            Console.ReadKey();
-
-            Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero);
-            Screans.MainMenu.Show(hero);
-            Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero);
-            Screans.MainMenu.Show(hero);
-            ThirdRoom(hero, context);
-        }
-        public static void ThirdRoom(Hero hero, DnDContext context)
-        {
-            var room = context.Rooms.Where(r => r.Id == 3).FirstOrDefault();
-            Console.Clear();
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.Red;
-
-            PhaseTyper("Congratulations! You entered to the Final Dungeon!");
-            PhaseTyper($"{hero.Name}'s health: {hero.Health}");
-            PhaseTyper(room.Description);
-            PhaseTyper("Fight! "); Console.WriteLine();
-            PhaseTyper("Press any key to continue..");
-            Console.ReadKey();
-
-            Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero);
-            Screans.MainMenu.Show(hero);
-            Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero);
-            Screans.MainMenu.Show(hero);
-            FinalScrean.Show(hero);
-        }
-
         public static void Battle(Hero hero, DnDContext context, int roomId)
         {
             Console.BackgroundColor = ConsoleColor.Black;
@@ -245,7 +166,7 @@ namespace DnD.Data
                         Random randDirection = new Random();
 
                         List<string> dragonDefList = new List<string>() { "left", "right" };
-                        string dragonDef = dragonDefList[randDirection.Next(0, 1)];
+                        string dragonDef = dragonDefList[randDirection.Next(0, 2)];
 
                         if (!heroHit.Equals(dragonDef))
                         {
@@ -273,7 +194,7 @@ namespace DnD.Data
                                     break;
                                 }
                                 Console.Clear();
-                                PhaseTyper($"The Dragon blocked your hit, but you still take him dammage. {dragon.Name}'s remaining health: {dragon.Health}");
+                                PhaseTyper($"The Dragon blocked your hit, but you still deal damage. {dragon.Name}'s remaining health: {dragon.Health}");
                                 Console.WriteLine();
                                 PhaseTyper("press any key to continue.");
                                 Console.ReadKey();
@@ -296,8 +217,8 @@ namespace DnD.Data
                             Console.Clear();
                             Random randDefHero = new Random();
                             Random randHitDragon = new Random();
-                            int defHero = randDefHero.Next(1, 2);
-                            int hitDragon = randHitDragon.Next(1, 2);
+                            int defHero = randDefHero.Next(1, 3);
+                            int hitDragon = randHitDragon.Next(1, 3);
                             if (defHero != hitDragon)
                             {
                                 hero.Health -= hitDragon;
@@ -323,7 +244,7 @@ namespace DnD.Data
                                         break;
                                     }
                                     Console.Clear();
-                                    PhaseTyper($"You blocked {dragon.Name}'s hit, but he is too powerful and still take you dammage!");
+                                    PhaseTyper($"You blocked {dragon.Name}'s hit, but he is too powerful and deals damage!");
                                     PhaseTyper($"Remaining health: {hero.Health}");
                                     Console.WriteLine();
                                     PhaseTyper("press any key to continue.");
@@ -367,11 +288,8 @@ namespace DnD.Data
                         break;
 
                 }
-
-
             }
-
-
+            
             if (hero.Health > 0)
             {
                 Console.BackgroundColor = ConsoleColor.Black;
@@ -379,8 +297,9 @@ namespace DnD.Data
                 Console.Clear();
                 PhaseTyper($"YOU KILLED {dragon.Name.ToUpper()} !!!");
                 hero.KilledDragons.Add(dragon);
+                hero.Health = 100;
                 context.SaveChanges();
-                PhaseTyper("To continue your quest in the First Dungeon press any key!");
+                Console.WriteLine();
                 PhaseTyper("When you kill a dragon you receive free Special Ability! You can choose it from the Main Menu");
                 Console.ReadKey();
                 Console.WriteLine();

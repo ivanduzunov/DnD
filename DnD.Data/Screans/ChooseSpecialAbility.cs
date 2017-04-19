@@ -11,7 +11,7 @@ namespace DnD.Data.Screans
 {
     public class ChooseSpecialAbility
     {
-        public static void Show(Hero hero)
+        public static void Show(Hero hero,DnDContext context)
         {
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
@@ -20,9 +20,10 @@ namespace DnD.Data.Screans
             Console.WriteLine("Press ESCAPE to go back to the Main Menu.");
             Console.WriteLine("To apply the ability press ENTER.");
             Console.WriteLine();
-            var context = new DnDContext();
+            
             int pointer = 1;
-            foreach (var item in context.SpecialAbilities)
+            var abilities = context.SpecialAbilities.ToList();
+            foreach (var item in abilities)
             {
                 Console.WriteLine($"Name: {item.Name}. This Ability would give you {item.Power} {item.AblityType}");
             }
@@ -37,7 +38,7 @@ namespace DnD.Data.Screans
                 Console.WriteLine("Press ENTER to select the Ability.");
                 Console.WriteLine();
                 int current = 1;
-                foreach (var item in context.SpecialAbilities)
+                foreach (var item in abilities)
                 {
                     if (current == pointer)
                     {
@@ -68,7 +69,7 @@ namespace DnD.Data.Screans
                 switch (key.Key.ToString())
                 {
                     case "DownArrow":
-                        if (pointer < 5)
+                        if (pointer < 7)
                         {
                             pointer++;
                         }
@@ -90,8 +91,8 @@ namespace DnD.Data.Screans
                             Console.ForegroundColor = ConsoleColor.White;
                             Console.Clear();
                             
-                            var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Abyss");
-                            ApplySpecialAbility(hero, ability);
+                            var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Dragon Hunter Axe");
+                            ApplySpecialAbility(hero, ability,context);
                             return;
 
                         }
@@ -102,7 +103,7 @@ namespace DnD.Data.Screans
                             Console.Clear();
                            
                             var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Heavens Shield");
-                            ApplySpecialAbility(hero, ability);
+                            ApplySpecialAbility(hero, ability,context);
                             return;
 
 
@@ -113,8 +114,8 @@ namespace DnD.Data.Screans
                             Console.ForegroundColor = ConsoleColor.White;
                             Console.Clear();
                            
-                            var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Fireball");
-                            ApplySpecialAbility(hero, ability);
+                            var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Sword Of Balance");
+                            ApplySpecialAbility(hero, ability,context);
                             return;
                         }
                         if (pointer == 4)
@@ -123,8 +124,8 @@ namespace DnD.Data.Screans
                             Console.ForegroundColor = ConsoleColor.White;
                             Console.Clear();
                             
-                            var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Frostball");
-                            ApplySpecialAbility(hero, ability);
+                            var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Dragon's Tooth Sword");
+                            ApplySpecialAbility(hero, ability,context);
                             return;
                         }
                         if (pointer == 5)
@@ -133,21 +134,45 @@ namespace DnD.Data.Screans
                             Console.ForegroundColor = ConsoleColor.White;
                             Console.Clear();
                             
-                            var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Heal");
-                            ApplySpecialAbility(hero, ability);
+                            var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "A Bucket Helmet");
+                            ApplySpecialAbility(hero, ability,context);
+                            return;
+                        }
+                        if (pointer == 6)
+                        {
+                            Console.BackgroundColor = ConsoleColor.Black;
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.Clear();
+
+                            var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "The One Ring");
+                            ApplySpecialAbility(hero, ability,context);
+                            return;
+                        }
+                        if (pointer == 7)
+                        {
+                            Console.BackgroundColor = ConsoleColor.Black;
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.Clear();
+
+                            var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Lightsaber");
+                            ApplySpecialAbility(hero, ability,context);
                             return;
                         }
                         break;
                 }
             }
         }
-        public static void ApplySpecialAbility(Hero hero, SpecialAbility ability)
+        public static void ApplySpecialAbility(Hero hero, SpecialAbility ability,DnDContext context)
         {
             if (ability.AblityType == SpecialAbilityType.Attack)
             {
+                hero.SpecialAbilities.Add(ability);
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
                 hero.AttackPower += ability.Power;
+                hero.SpecialAbilities.Add(ability);
+               
+                context.SaveChanges();
                 Utility.PhaseTyper($"Your Attack power increased by {ability.Power}");
                 Utility.PhaseTyper($"Total Attack Power: {hero.AttackPower}");
                 Console.WriteLine();
@@ -156,11 +181,15 @@ namespace DnD.Data.Screans
             }
             else if (ability.AblityType == SpecialAbilityType.Deffence)
             {
+                hero.SpecialAbilities.Add(ability);
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
                 hero.DeffencePower += ability.Power;
+                hero.SpecialAbilities.Add(ability);
+              
+                context.SaveChanges();
                 Utility.PhaseTyper($"Your Deffence power increased by {ability.Power}");
-                Utility.PhaseTyper($"Total Attack Power: {hero.DeffencePower}");
+                Utility.PhaseTyper($"Total Defece Power: {hero.DeffencePower}");
                 Console.WriteLine();
                 Utility.PhaseTyper("Press any key to continue...");
                 Console.ReadKey();

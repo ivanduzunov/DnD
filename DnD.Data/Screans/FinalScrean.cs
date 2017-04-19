@@ -11,6 +11,7 @@ namespace DnD.Data.Screans
     {
         public static void Show(Hero hero)
         {
+            Console.Clear();
             Utility.PhaseTyper("Your game is over");
             Utility.PhaseTyper($"Your hero was {hero.Name}");
             Console.WriteLine(); Console.WriteLine();

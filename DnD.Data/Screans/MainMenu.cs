@@ -22,7 +22,7 @@ namespace DnD.Data.Screans
             List<string> lines = new List<string>();
             string firstLine = "Continue";
             string secondLine = "How to play";
-            string thirdLine = "SpecialAbilities";
+            string thirdLine = "Inventory";
             string fourthLine = "Exit";
             lines.Add(firstLine); lines.Add(secondLine); lines.Add(thirdLine); lines.Add(fourthLine);
             int pointer = 1;

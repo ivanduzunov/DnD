@@ -28,3 +28,8 @@ C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (3)\DnD\DnD.Models\bin\Debu
 C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (3)\DnD\DnD.Models\obj\Debug\DnD.Models.csprojResolveAssemblyReference.cache
 C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (3)\DnD\DnD.Models\obj\Debug\DnD.Models.dll
 C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (3)\DnD\DnD.Models\obj\Debug\DnD.Models.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (5)\DnD\DnD.Models\bin\Debug\DnD.Models.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (5)\DnD\DnD.Models\bin\Debug\DnD.Models.pdb
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (5)\DnD\DnD.Models\obj\Debug\DnD.Models.csprojResolveAssemblyReference.cache
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (5)\DnD\DnD.Models\obj\Debug\DnD.Models.dll
+C:\Users\Stoyan Grancharov\Desktop\CSHARP\New folder (5)\DnD\DnD.Models\obj\Debug\DnD.Models.pdb

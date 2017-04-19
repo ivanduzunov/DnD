@@ -25,6 +25,8 @@ namespace DnD.Models
         [Required]
         public int Power { get; set; }
         public virtual ICollection<Hero> Heroes { get; set; }
+
+        
     }
     public enum SpecialAbilityType
     {       

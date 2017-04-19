@@ -24,14 +24,15 @@ namespace DnD.Data.Screans
 
             Console.WriteLine();
             var context = new DnDContext();
-        
+           var  abilities = hero.SpecialAbilities.ToList();
 
-            foreach (var item in context.SpecialAbilities)
+            foreach (var item in abilities)
             {
                 Console.WriteLine($"Name: {item.Name}. This Ability would give you {item.Power} {item.AblityType}");
             }
 
-            Console.WriteLine("Press ESCAPE to go back to the Main Menu.");
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("Press any key to go back to battle mode");
 
             var key = Console.ReadKey();

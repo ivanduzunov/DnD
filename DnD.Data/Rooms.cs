@@ -24,15 +24,13 @@ namespace DnD.Data
             Utility.PhaseTyper("Its time for battle!"); Console.WriteLine();
             Utility.PhaseTyper("Press any key to continue..");
             Console.ReadKey();
-
-
-
+            
 
             Utility.Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero);
+            ChooseSpecialAbility.Show(hero,context);
             Screans.MainMenu.Show(hero);
             Utility.Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero);
+            ChooseSpecialAbility.Show(hero, context);
             Screans.MainMenu.Show(hero);
             SecondRoom(hero, context);
         }
@@ -52,10 +50,10 @@ namespace DnD.Data
             Console.ReadKey();
 
             Utility.Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero);
+            ChooseSpecialAbility.Show(hero, context);
             Screans.MainMenu.Show(hero);
             Utility.Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero);
+            ChooseSpecialAbility.Show(hero, context);
             Screans.MainMenu.Show(hero);
             ThirdRoom(hero, context);
         }
@@ -74,11 +72,29 @@ namespace DnD.Data
             Console.ReadKey();
 
             Utility.Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero);
+            ChooseSpecialAbility.Show(hero, context);
             Screans.MainMenu.Show(hero);
             Utility.Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero);
+            ChooseSpecialAbility.Show(hero, context);
             Screans.MainMenu.Show(hero);
+            FinalRoom(hero, context);
+        }
+        public static void FinalRoom(Hero hero , DnDContext context)
+        {
+            var room = context.Rooms.Where(r => r.Id == 4).FirstOrDefault();
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Red;
+
+            Utility.PhaseTyper("Congratulations! You entered the castle!");
+            Utility.PhaseTyper($"{hero.Name}'s health: {hero.Health}");
+            Utility.PhaseTyper(room.Description);
+            Utility.PhaseTyper("Fight! "); Console.WriteLine();
+            Utility.PhaseTyper("Press any key to continue..");
+            Console.ReadKey();
+
+            Utility.Battle(hero, context, room.Id);
+            FinalScrean.Show(hero);
         }
     }
 }
