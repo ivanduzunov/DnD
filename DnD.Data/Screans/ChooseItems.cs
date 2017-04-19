@@ -1,4 +1,4 @@
-﻿using DnD.Data.SpecialAbilities;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -87,11 +87,17 @@ namespace DnD.Data.Screans
                         Console.ForegroundColor = ConsoleColor.White;
                         if (pointer == 1)
                         {
+                            
                             Console.BackgroundColor = ConsoleColor.Black;
                             Console.ForegroundColor = ConsoleColor.White;
                             Console.Clear();
                             
                             var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Dragon Hunter Axe");
+                            if (ability.Heroes.Count > 0)
+                            {
+                                Utility.PhaseTyper("You allready have this Item!         ................");
+                                break;
+                            }
                             ApplySpecialAbility(hero, ability,context);
                             return;
 
@@ -103,6 +109,11 @@ namespace DnD.Data.Screans
                             Console.Clear();
                            
                             var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Heavens Shield");
+                            if (ability.Heroes.Count > 0)
+                            {
+                                Utility.PhaseTyper("You allready have this Item!         ................");
+                                break;
+                            }
                             ApplySpecialAbility(hero, ability,context);
                             return;
 
@@ -115,6 +126,11 @@ namespace DnD.Data.Screans
                             Console.Clear();
                            
                             var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Sword Of Balance");
+                            if (ability.Heroes.Count > 0)
+                            {
+                                Utility.PhaseTyper("You allready have this Item!         ................");
+                                break;
+                            }
                             ApplySpecialAbility(hero, ability,context);
                             return;
                         }
@@ -125,6 +141,11 @@ namespace DnD.Data.Screans
                             Console.Clear();
                             
                             var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Dragon's Tooth Sword");
+                            if (ability.Heroes.Count > 0)
+                            {
+                                Utility.PhaseTyper("You allready have this Item!         ................");
+                                break;
+                            }
                             ApplySpecialAbility(hero, ability,context);
                             return;
                         }
@@ -135,6 +156,11 @@ namespace DnD.Data.Screans
                             Console.Clear();
                             
                             var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "A Bucket Helmet");
+                            if (ability.Heroes.Count > 0)
+                            {
+                                Utility.PhaseTyper("You allready have this Item!         ................");
+                                break;
+                            }
                             ApplySpecialAbility(hero, ability,context);
                             return;
                         }
@@ -145,6 +171,11 @@ namespace DnD.Data.Screans
                             Console.Clear();
 
                             var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "The One Ring");
+                            if (ability.Heroes.Count > 0)
+                            {
+                                Utility.PhaseTyper("You allready have this Item!         ................");
+                                break;
+                            }
                             ApplySpecialAbility(hero, ability,context);
                             return;
                         }
@@ -155,6 +186,11 @@ namespace DnD.Data.Screans
                             Console.Clear();
 
                             var ability = context.SpecialAbilities.FirstOrDefault(c => c.Name == "Lightsaber");
+                            if (ability.Heroes.Count > 0)
+                            {
+                                Utility.PhaseTyper("You allready have this Item!         ................");
+                                break;
+                            }
                             ApplySpecialAbility(hero, ability,context);
                             return;
                         }
@@ -164,6 +200,7 @@ namespace DnD.Data.Screans
         }
         public static void ApplySpecialAbility(Hero hero, SpecialAbility ability,DnDContext context)
         {
+           
             if (ability.AblityType == SpecialAbilityType.Attack)
             {
                 hero.SpecialAbilities.Add(ability);

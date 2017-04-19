@@ -105,7 +105,7 @@ namespace DnD.Data
             var dragonList = context.Dragons.Where(d => d.Room.Id == roomId && d.Killers.Count == 0).ToList();
             int randomInt = randDragon.Next(0, dragonList.Count - 1);
             var dragon = dragonList[randomInt];
-            PhaseTyper($"You face a Dragon - {dragon.Name.ToUpper()}, <<{dragon.Description}>>");
+            PhaseTyper($"You face the Dragon - {dragon.Name.ToUpper()}, <<{dragon.Description}>>");
             PhaseTyper($"Your Health: {hero.Health}");
             PhaseTyper($"Dragon's Health: {dragon.Health}");
             Console.WriteLine();
@@ -300,7 +300,7 @@ namespace DnD.Data
                 hero.Health = 100;
                 context.SaveChanges();
                 Console.WriteLine();
-                PhaseTyper("When you kill a dragon you receive free Special Ability! You can choose it from the Main Menu");
+                PhaseTyper("When you kill a dragon you receive free Item! You can choose it from the Main Menu");
                 Console.ReadKey();
                 Console.WriteLine();
             }

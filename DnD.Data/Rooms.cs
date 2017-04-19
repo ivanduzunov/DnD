@@ -18,8 +18,7 @@ namespace DnD.Data
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Red;
-
-            Utility.PhaseTyper("You just entered into the First Dungeon!");
+            
             Utility.PhaseTyper(room.Description);
             Utility.PhaseTyper("Its time for battle!"); Console.WriteLine();
             Utility.PhaseTyper("Press any key to continue..");
