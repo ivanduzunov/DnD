@@ -9,14 +9,14 @@ using DnD.Models;
 
 namespace DnD.Data.Screans
 {
-    public class ChooseSpecialAbility
+    public class ChooseItems
     {
         public static void Show(Hero hero,DnDContext context)
         {
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();
-            Console.WriteLine("Choose Special Ability!"); Console.WriteLine();
+            Console.WriteLine("Choose Item:"); Console.WriteLine();
             Console.WriteLine("Press ESCAPE to go back to the Main Menu.");
             Console.WriteLine("To apply the ability press ENTER.");
             Console.WriteLine();
@@ -34,7 +34,7 @@ namespace DnD.Data.Screans
                 Console.ForegroundColor = ConsoleColor.White;
 
                 Console.Clear();
-                Console.WriteLine("After each killed Dragon, You can choose one of these Special Abilities:"); Console.WriteLine();
+                Console.WriteLine("After each killed Dragon, You can choose one of these Items:"); Console.WriteLine();
                 Console.WriteLine("Press ENTER to select the Ability.");
                 Console.WriteLine();
                 int current = 1;
@@ -51,7 +51,7 @@ namespace DnD.Data.Screans
                         Console.ForegroundColor = ConsoleColor.White;
                     }
                     
-                    Console.WriteLine($"Name: {item.Name}. This Ability would give you {item.Power} {item.AblityType}");
+                    Console.WriteLine($"Name: {item.Name}. This Item would give you {item.Power} {item.AblityType}");
                     current++;
                 }
                 Console.BackgroundColor = ConsoleColor.Black;

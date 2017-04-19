@@ -9,17 +9,12 @@ using DnD.Models;
 
 namespace DnD.Data.Screans
 {
-    public class SpecialAbilitiesMenu
+    public class ItemsMenu
     {
         public static void Show(Hero hero)
         {
             Console.Clear();
-            Console.WriteLine("After each killed Dragon, You can choose one between these Special Abilities:"); Console.WriteLine();
-
-            
-            
-          
-
+            Console.WriteLine("Items:"); Console.WriteLine();
             Console.WriteLine("Press ESCAPE to go back to the Main Menu.");
 
             Console.WriteLine();

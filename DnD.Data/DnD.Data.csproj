@@ -55,15 +55,14 @@
     <Compile Include="DnDContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rooms.cs" />
-    <Compile Include="Screans\ChooseSpecialAbility.cs" />
+    <Compile Include="Screans\ChooseItems.cs" />
     <Compile Include="Screans\FinalScrean.cs" />
     <Compile Include="Screans\HeroSelection.cs" />
     <Compile Include="Screans\HowToPlay.cs" />
     <Compile Include="Screans\Introduction.cs" />
     <Compile Include="Screans\MainMenu.cs" />
-    <Compile Include="Screans\SpecialAbilitiesMenu.cs" />
+    <Compile Include="Screans\ItemsMenu.cs" />
     <Compile Include="Screans\Validation.cs" />
-    <Compile Include="Utilities\SpecialAbilities.cs" />
     <Compile Include="Utilities\Utility.cs" />
   </ItemGroup>
   <ItemGroup>

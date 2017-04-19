@@ -27,10 +27,10 @@ namespace DnD.Data
             
 
             Utility.Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero,context);
+            ChooseItems.Show(hero,context);
             Screans.MainMenu.Show(hero);
             Utility.Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero, context);
+            ChooseItems.Show(hero, context);
             Screans.MainMenu.Show(hero);
             SecondRoom(hero, context);
         }
@@ -50,10 +50,10 @@ namespace DnD.Data
             Console.ReadKey();
 
             Utility.Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero, context);
+            ChooseItems.Show(hero, context);
             Screans.MainMenu.Show(hero);
             Utility.Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero, context);
+            ChooseItems.Show(hero, context);
             Screans.MainMenu.Show(hero);
             ThirdRoom(hero, context);
         }
@@ -72,10 +72,10 @@ namespace DnD.Data
             Console.ReadKey();
 
             Utility.Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero, context);
+            ChooseItems.Show(hero, context);
             Screans.MainMenu.Show(hero);
             Utility.Battle(hero, context, room.Id);
-            ChooseSpecialAbility.Show(hero, context);
+            ChooseItems.Show(hero, context);
             Screans.MainMenu.Show(hero);
             FinalRoom(hero, context);
         }
