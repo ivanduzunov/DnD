@@ -15,6 +15,7 @@ namespace DnD.Client
     {
         public static void Main(string[] args)
         {
+            // changes here
             DnDContext context = new DnDContext();
             Console.WindowHeight = 50;
             Console.BufferHeight = 50;
