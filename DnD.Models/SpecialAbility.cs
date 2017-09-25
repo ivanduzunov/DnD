@@ -10,8 +10,7 @@ namespace DnD.Models
     public class SpecialAbility
     {
 
-        //It would have different interesting names, 
-        //but it will just increase the deffence or the attack power of the Hero. It would be given, after every killing
+        
         
         [Key]
         public int Id { get; set; }
